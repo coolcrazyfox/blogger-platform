@@ -1,0 +1,115 @@
+.blogs_container{
+    grid-area: b;
+    /*background: #576cc0;*/
+
+}
+.form_blog{
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    height: 78vh;
+    width: 83vw;
+    background: rgba(12, 107, 107, 0.63);
+    box-shadow: rgb(17, 16, 16) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    /*border-top: 1px solid #ebedf1;*/
+    border-left: 1px solid #ebedf1;
+    border-radius: 5px;
+    margin: 18px 23px 8px 5px;
+}
+.container_items{
+    display: flex;
+    flex-direction: column;
+}
+.container_items .empty{
+    display: flex;
+    font-size: 1.5rem;
+    width: 80%;
+    justify-content: flex-start;
+    align-items: start;
+    margin: 3%;
+    color: #ebedf1;
+    text-transform: uppercase;
+    transition: .5s;
+    cursor: none;
+    /*border: 1px solid #ebedf1;*/
+}
+.blog_item{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-width: 772px;
+    height: 90px;
+    margin: 10px 5px 0 15px;
+    border-radius: 10px;
+    /*height: 48px;*/
+    /*top: 283px;*/
+    /*left:  444px;*/
+    /*border: 1px solid #ebedf1;*/
+    padding: 5px 5px 10px 15px;
+
+}
+.blog_item:hover {
+    background: rgba(2, 19, 14, 0.57);
+    border-radius: 10px;
+    transition: .5s;
+
+}
+.blog_item span{
+    color: rgba(255, 153, 0, 0);
+    font-size: .8rem;
+}
+.blog_item:hover span{
+    color: #ebedf1;
+    transition: .5s;
+}
+.blog_item:hover span:hover{
+    font-size: .85rem;
+    color: #ff9900;
+    transition: .5s;
+}
+.image_blog{
+    width: 60px;
+    height: 56px;
+    /*border: 1px solid #ffcc00;*/
+    margin: 19px 35px 10px 15px;
+    border-radius: 5px;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png");
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    background-size: cover;
+}
+.image_blog img{
+    width: 60px;
+    height: 56px;
+    border-radius: 5px;
+    background-size: cover;
+}
+.text_container{
+    color: #ebedf1;
+    /*border: 1px solid #ebedf1;*/
+    height: 100%;
+    width: 100%;
+    padding-bottom: 10px;
+
+}
+.text_container .title{
+    color: #ebedf1;
+    font-size: 1rem;
+    margin-top: -22px;
+    padding-bottom: 7px;
+}
+.text_container h5{
+    color: #c4dbff;
+    font-size: 0.8rem;
+    padding-bottom: 5px;
+}
+.text_container p{
+    color: #c4dbff;
+    font-size: 0.7rem;
+    padding-bottom: 5px;
+}
+.text_container a{
+    color: #ff9900;
+    padding-left: 10px;
+}

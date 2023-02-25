@@ -1,0 +1,95 @@
+.mainn{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-width: 1600px;
+    background: #0c6b6b;
+}
+.form{
+    /*margin: 20px;*/
+    height: 200px;
+    width: 900px;
+    border: 1px solid wheat;
+    background: rgba(43, 57, 69, 0.9);
+}
+.form .input_block{
+    display: flex;
+    flex-direction: row;
+}
+.main_btn{
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    margin: 20px;
+}
+.form .input_block .clear{
+    position: relative;
+    top: 14px;
+    right: 30px;
+    color: #0c6b6b ;
+    /*border: 1px solid wheat;*/
+}
+.form .input_block .clear:hover{
+    color: #ab0e32;
+}
+.form_modal{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 60px;
+    margin: 10px;
+    border-left: 1px solid snow;
+    border-radius: 15px;
+    background: #142f3b;
+}
+.form_modal .circle{
+    position: relative;
+    /*border: 1px solid snow;*/
+    display: flex;
+    color: #ebedf1;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 100%;
+    border-radius: 10px;
+}
+.form_modal .message{
+    margin: 15px;
+    color: #ebedf1;
+    /*border: 1px solid snow;*/
+}
+.form_modal .cancel_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    /*border: 1px solid snow;*/
+}
+/*.mainn ul {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    height: 400px;*/
+/*    width: 400px;*/
+/*    color: #ebedf1;border: 1px solid wheat;*/
+/*}*/
+/*.mainn li{*/
+/*    width: 350px;*/
+/*    margin: 10px;*/
+/*    border: 1px solid wheat;*/
+/*    cursor: pointer;}*/
+/*.mainn li.active{*/
+/*    color: #ff9900;*/
+/*    border-color: #af8b9a;*/
+/*    background: #2f1422;*/
+/*}*/
+/*.mainn .btn_box{*/
+/*    display: flex;*/
+/*    border: 1px solid wheat;*/
+
+/*}*/
