@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import { blogsAPI, OneBlogResponseType, AddBlogType, GetBlogsArgsType } from "../api/bloggerPlatformAPI"
+import { blogsAPI, OneBlogResponseType, AddBlogType, GetBlogsArgsType } from "../API/BloggerPlatformService"
 import { PostsType } from "./PostsReducer"
 
 

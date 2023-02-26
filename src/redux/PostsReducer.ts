@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { CreatePostType, postsAPI } from "../api/bloggerPlatformAPI";
-import { getBlogPostsTC } from "./BlogReducer";
+import { CreatePostType, postsAPI } from "../API/BloggerPlatformService";
+import { getBlogPostsTC } from "./BlogsReducer";
 
 export type PostsType = {
     pagesCount: number
