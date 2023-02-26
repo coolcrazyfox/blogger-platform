@@ -70,32 +70,32 @@ const BlogsPage = () => {
     // const [blogs, setBlogs] = useState([blog])
     
     //dispatch
-    const dispatch = useAppDispatch
+    // const dispatch = useAppDispatch
 
-    useEffect(() => {
-        dispatch(getBlogsTC({}))
-    }, [])
+    // useEffect(() => {
+    //     dispatch(getBlogsTC({}))
+    // }, [])
     //show more blogs 
-    const showMoreHandler = () => {
-        debugger
-        if(pageSize< totalCount){
-            pageSize+=10
-            dispatch(getBlogsTC({pageSize})) 
-        }
-        setDisable(true) 
-    }
+    // const showMoreHandler = () => {
+    //     debugger
+    //     if(pageSize< totalCount){
+    //         pageSize+=10
+    //         dispatch(getBlogsTC({pageSize})) 
+    //     }
+    //     setDisable(true) 
+    // }
 
     // get blogs
-    useEffect(()=>{
-        fetchBlogs()
-    },[])
+    // useEffect(()=>{
+    //     fetchBlogs()
+    // },[])
     
 
-    async function fetchBlogs(){blogs
-        const response= await axios.get('https://blog-platform-for-guild.vercel.app/')
+    async function fetchBlogs(){
+        const response= await axios.get('https://blog-platform-for-guild.vercel.app/blogs')
         // const blogs = await PostService.getAll()
         // setBlogs(blogs)
-        console.log(response.items)
+        // console.log(response.items)        
         console.log(response.data)
         // console.log(blogs.data)
 
@@ -127,7 +127,7 @@ const BlogsPage = () => {
         setBlogs(blogs.filter(b => b.id !== blog.id))
     }
     //sort blogs by select values
-    const sortedAndSearchedBlogs=useBlogs(blogs, filter.sort, filter.query)
+    const sortedAndSearchedBlogs = useBlogs(blogs, filter.sort, filter.query)
     //active modal function
     const activeModal=()=>{
         setModal(true)
