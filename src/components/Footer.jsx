@@ -10,7 +10,10 @@ const Footer = ({onClick, theme}) => {
 
                     <button onClick={onClick}>get</button>
                     <Flip>
-                        <SuperButton link={'/'}>
+                        <SuperButton
+                            onClick={onClick}
+                            // link={'/'}
+                         >
                             Show more
                         </SuperButton>
                     </Flip>
