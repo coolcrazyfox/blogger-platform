@@ -68,6 +68,7 @@ const BlogsPage = () => {
     // let {page, pageSize, pagesCount, totalCount} = useSelector(selectBlogsQuery)
     const [blogs, setBlogs] = useState(initialTasks)
     // const [blogs, setBlogs] = useState([blog])
+    const[items,setItems]=useState([])
     
     //dispatch
     // const dispatch = useAppDispatch
@@ -90,16 +91,29 @@ const BlogsPage = () => {
     //     fetchBlogs()
     // },[])
     
-
-    async function fetchBlogs(){
-        const response= await axios.get('https://blog-platform-for-guild.vercel.app/blogs/')
-        // const blogs = await PostService.getAll()
-        // setBlogs(blogs)
-        // console.log(response.items)        
-        console.log(response.data)
-        // console.log(blogs.data)
-
+    const fetchBlogs=async()=>{
+        try{
+            const response= await fetch('https://blog-platform-for-guild.vercel.app/blogs')
+            const jsonData= await response.json()
+            console.log('data', jsonData)
+            // setItems(jsonData)
+        }catch(e){
+            console.error(e.message)
+        }
     }
+    useEffect(()=>{
+        fetchBlogs()
+    },[])
+    // async function fetchBlogs(){
+    //     const response= await axios.get('https://blog-platform-for-guild.vercel.app/blogs')
+        
+    //     // const blogs = await PostService.getAll()
+    //     // setBlogs(blogs)
+    //     // console.log(response.items)        
+    //     console.log(response.data)
+    //     // console.log(blogs.data)
+
+    // }
 
     //select
     const selectValue = [
