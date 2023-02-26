@@ -3,7 +3,7 @@ import {Route, Routes} from "react-router-dom";
 import Hero from "../pages/Hero";
 import UsersPage from "../pages/UsersPage";
 import RegistrationPage from "../pages/RegistrationPage";
-import Blogger from "../pages/Blogger";
+import Blogger from "../pages/BlogsPage";
 import PostsPage from "../pages/PostsPage";
 import Settings from "../pages/Settings";
 import Error404 from "../pages/Error404";
