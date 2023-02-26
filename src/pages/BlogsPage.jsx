@@ -92,7 +92,7 @@ const BlogsPage = () => {
     
 
     async function fetchBlogs(){
-        const response= await axios.get('https://blog-platform-for-guild.vercel.app/blogs')
+        const response= await axios.get('https://blog-platform-for-guild.vercel.app/blogs/')
         // const blogs = await PostService.getAll()
         // setBlogs(blogs)
         // console.log(response.items)        
