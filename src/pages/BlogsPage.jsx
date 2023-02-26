@@ -1,5 +1,4 @@
 import React, {useMemo, useState, useEffect} from 'react';
-// import { uuid } from 'uuidv4';
 import s from "../styles/Blogger.module.css";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
@@ -13,14 +12,17 @@ import axios from "axios";
 import { themes } from './Hero';
 import { ThemeProvider } from 'styled-components';
 import PostService from '../API/PostService';
-
+import { addBlogTC, getBlogsTC } from '../redux/BlogsReducer';
+import { useSelector } from 'react-redux';
+import { selectBlogs, selectBlogsQuery } from './../redux/selectors/blogs-selectors';
+import { useAppDispatch } from './../store/store';
 
 
 export const initialTasks = [
     {
         id: 1,
         image: 'https://st2.depositphotos.com/2001755/8564/i/450/depositphotos_85647140-stock-photo-beautiful-landscape-with-birds.jpg',
-        name: 'The best blog in our village',
+        name: '111The best blog in our village',
         websiteUrl: 'https://www.youtube.com/',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
         createdAt: '2022-11-20'
@@ -52,7 +54,9 @@ export const initialTasks = [
 ]
 const themesB = themes
 
-const Blogger = () => {
+const BlogsPage = () => {
+    //disabled
+    const [disabled, setDisable] = useState(false)
     //navBar
     const [isActive, setIsActive] = useState(false)  
     //theme
@@ -60,8 +64,42 @@ const Blogger = () => {
     //modal
     const [modal, setModal] = useState(false)
     //initial tasks
+    // let blog = useSelector(selectBlogs)
+    // let {page, pageSize, pagesCount, totalCount} = useSelector(selectBlogsQuery)
     const [blogs, setBlogs] = useState(initialTasks)
-    // const [blogs, setBlogs] = useState([])
+    // const [blogs, setBlogs] = useState([blog])
+    
+    //dispatch
+    const dispatch = useAppDispatch
+
+    useEffect(() => {
+        dispatch(getBlogsTC({}))
+    }, [])
+    //show more blogs 
+    const showMoreHandler = () => {
+        debugger
+        if(pageSize< totalCount){
+            pageSize+=10
+            dispatch(getBlogsTC({pageSize})) 
+        }
+        setDisable(true) 
+    }
+
+    // get blogs
+    useEffect(()=>{
+        fetchBlogs()
+    },[])
+    
+
+    async function fetchBlogs(){blogs
+        const response= await axios.get('https://blog-platform-for-guild.vercel.app/')
+        // const blogs = await PostService.getAll()
+        // setBlogs(blogs)
+        console.log(response.items)
+        console.log(response.data)
+        // console.log(blogs.data)
+
+    }
 
     //select
     const selectValue = [
@@ -72,35 +110,10 @@ const Blogger = () => {
 
     ]
     const arOptions = ['New blogs first', 'Old blogs first', 'From A to Z', 'From Z to A'];
-    const defaultSelectValue = arOptions[0]
-    // const [text, setText] = useState('')
-    // const [selectedSort, setSelectedSort] = useState('')
-    // const [searchQuery, setSearchQuery] = useState('')
-    // const handlerEnterSearch = (e) => {
-    //     setFilter(e.target.value)
-    //
-    // }
-    // const handleSearchChange = (text) => {
-    //     text.preventDefault()
-    //     setText(text)
-    // }
+    const defaultSelectValue = arOptions[0] 
 
     //search
     const [filter, setFilter]=useState({sort: '', query: ''})
-
-    // get blogs
-    // useEffect(()=>{
-    //     fetchBlogs()
-    // },[])
-
-    async function fetchBlogs(){
-        const response= await axios.get('https://blog-platform-for-guild.vercel.app/blogs')
-        // const blogs = await PostService.getAll()
-        // setBlogs(blogs)
-        console.log(response.data)
-        // console.log(blogs.data)
-
-    }
 
 
     // add new blog
@@ -153,6 +166,7 @@ const Blogger = () => {
                 </BlogsList>
                 <Footer theme={theme}
                     onClick={fetchBlogs} 
+                    // onClick={showMoreHandler} 
 
                     />
                
@@ -170,4 +184,4 @@ const Blogger = () => {
     );
 };
 
-export default Blogger;
+export default BlogsPage;
