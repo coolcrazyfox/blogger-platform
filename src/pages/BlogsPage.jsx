@@ -64,9 +64,9 @@ const BlogsPage = () => {
     //modal
     const [modal, setModal] = useState(false)
     //initial tasks
-    // let blog = useSelector(selectBlogs)
+    let blog = useSelector(selectBlogs)
     // let {page, pageSize, pagesCount, totalCount} = useSelector(selectBlogsQuery)
-    const [blogs, setBlogs] = useState(initialTasks)
+    // const [blogs, setBlogs] = useState(initialTasks)
     // const [blogs, setBlogs] = useState([blog])
     const[items,setItems]=useState([])
     
