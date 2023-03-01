@@ -71,11 +71,11 @@ const BlogsPage = () => {
     const[items,setItems]=useState([])
     
     //dispatch
-    // const dispatch = useAppDispatch
+    const dispatch = useAppDispatch
 
-    // useEffect(() => {
-    //     dispatch(getBlogsTC({}))
-    // }, [])
+    useEffect(() => {
+        dispatch(getBlogsTC({}))
+    }, [])
     //show more blogs 
     // const showMoreHandler = () => {
     //     debugger
