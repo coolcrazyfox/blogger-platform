@@ -77,14 +77,14 @@ const BlogsPage = () => {
         dispatch(getBlogsTC({}))
     }, [])
     //show more blogs 
-    // const showMoreHandler = () => {
-    //     debugger
-    //     if(pageSize< totalCount){
-    //         pageSize+=10
-    //         dispatch(getBlogsTC({pageSize})) 
-    //     }
-    //     setDisable(true) 
-    // }
+    const showMoreHandler = () => {
+        debugger
+        if(pageSize< totalCount){
+            pageSize+=10
+            dispatch(getBlogsTC({pageSize})) 
+        }
+        setDisable(true) 
+    }
 
     // get blogs
     // useEffect(()=>{
