@@ -18,8 +18,9 @@ const TestItem = (props:PropsType) => {
         </div>
         <div>
             {props.tasks.map((task)=>(
-                <li key={task.id}>
-                    <input type="checkbox" />
+                <li key={task.id} >
+                    <input type="checkbox" checked={task.isDone}/>
+                    <span>{task.title}</span>
                 </li>
             ))}
         </div>
