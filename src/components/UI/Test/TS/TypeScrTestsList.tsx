@@ -1,4 +1,5 @@
 import React from 'react'
+import TestItem from './TestItem'
 
 const TypeScrTestsList = () => {
     const tasks=[
@@ -9,6 +10,8 @@ const TypeScrTestsList = () => {
     ]
   return (
     <>
+      
+        <TestItem tasks={tasks} />
       
     </>
   )
