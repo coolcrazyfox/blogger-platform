@@ -16,6 +16,18 @@ const TestItem = (props:PropsType) => {
             <input type="text" />
             <button>+</button>
         </div>
+        <div>
+            {props.tasks.map((task)=>(
+                <li key={task.id}>
+                    <input type="checkbox" />
+                </li>
+            ))}
+        </div>
+        <div>
+            <button>all</button>
+            <button>active</button>
+            <button>completed</button>
+        </div>
       
     </div>
   )
