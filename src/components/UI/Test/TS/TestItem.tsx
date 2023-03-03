@@ -9,6 +9,9 @@ type PropsType ={
     tasks:Array<TasksType>
 }
 const TestItem = (props:PropsType) => {
+    const onClickDeleteHandler=()=>{
+
+    }
   return (
     <div>
         <h2>{props.name}</h2>
@@ -21,7 +24,7 @@ const TestItem = (props:PropsType) => {
                 <li key={task.id} >
                     <input type="checkbox" checked={task.isDone}/>
                     <span>{task.title}</span>
-                    <button>x</button>
+                    <button onClick={onClickDeleteHandler}>x</button>
                 </li>
             ))}
         </div>
