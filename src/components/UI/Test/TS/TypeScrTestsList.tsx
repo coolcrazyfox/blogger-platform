@@ -9,6 +9,14 @@ const TypeScrTestsList = () => {
     {id:4,  title: 'Node.JS', isDone: false}
   ]
   let [tasks, setTasks]=React.useState(tasksTest)
+  let [filter, setFilter]=React.useState('all')
+  let tasksForTodoList= tasks
+  if(filter==='active'){
+    tasksForTodoList=tasks.filter(task => task.isDone===false)
+  }
+  if(filter==='completed'){
+    tasksForTodoList=tasks.filter(task => task.isDone===true)
+  }
   
   
   const onClickDeleteHandler=(id:number)=>{
