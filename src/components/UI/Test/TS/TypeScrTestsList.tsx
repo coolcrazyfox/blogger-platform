@@ -11,7 +11,7 @@ const TypeScrTestsList = () => {
   return (
     <>
       
-        <TestItem tasks={tasks} />
+        <TestItem tasks={tasks} name={'tests'}/>
       
     </>
   )
