@@ -6,7 +6,7 @@ export type FilterValue= 'all'|'active'|'completed'
 const TypeScrTestsList = () => {
   let tasksTest=[
     {id:1,  title: 'JS', isDone: false},
-    {id:2,  title: 'Java', isDone: false},
+    {id:2,  title: 'Java', isDone: true},
     {id:3,  title: 'NextJS', isDone: false},
     {id:4,  title: 'Node.JS', isDone: false}
   ]
@@ -28,11 +28,17 @@ const TypeScrTestsList = () => {
   const changesFilter=(value: FilterValue)=>{
     setFilter(value)
   }
+  const addTask=()=>{
+    let taskNew= {id:4,  title: 'new task', isDone: false}
+    let newTasks=[...tasks, taskNew]
+    setTasks(newTasks)
+  }
     
   return (
     <>
       
         <TestItem 
+          addTask={addTask}
           changes={changesFilter}
           remove={onClickDeleteHandler}
           tasks={tasksForTodoList}

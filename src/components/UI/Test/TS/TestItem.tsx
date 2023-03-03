@@ -12,6 +12,7 @@ type PropsType ={
     tasks:Array<TasksType>
     remove:(taskId:number)=>void
     changes:(value:FilterValue)=>void
+    addTask:()=>void
 }
 const TestItem = (props:PropsType) => {
     
@@ -20,7 +21,7 @@ const TestItem = (props:PropsType) => {
         <h2>{props.name}</h2>
         <div>
             <input type="text" />
-            <button>+</button>
+            <button onClick={()=>props.addTask()}>+</button>
         </div>
         <div>
             {props.tasks.map((task)=>(
