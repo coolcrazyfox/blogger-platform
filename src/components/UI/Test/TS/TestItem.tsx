@@ -1,4 +1,7 @@
 import React from 'react'
+import {FilterValue} from './TypeScrTestsList'
+
+
 type  TasksType={
     id: number
     title: string 
@@ -8,6 +11,7 @@ type PropsType ={
     name: string
     tasks:Array<TasksType>
     remove:(taskId:number)=>void
+    changes:(value:FilterValue)=>void
 }
 const TestItem = (props:PropsType) => {
     
@@ -28,9 +32,9 @@ const TestItem = (props:PropsType) => {
             ))}
         </div>
         <div>
-            <button>all</button>
-            <button>active</button>
-            <button>completed</button>
+            <button onClick={()=>{props.changes('all')}}>all</button>
+            <button onClick={()=>{props.changes('active')}}>active</button>
+            <button onClick={()=>{props.changes('completed')}}>completed</button>
         </div>
       
     </div>
