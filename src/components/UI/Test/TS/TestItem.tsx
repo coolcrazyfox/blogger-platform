@@ -7,11 +7,10 @@ type  TasksType={
 type PropsType ={    
     name: string
     tasks:Array<TasksType>
+    remove:(taskId:number)=>void
 }
 const TestItem = (props:PropsType) => {
-    const onClickDeleteHandler=()=>{
-
-    }
+    
   return (
     <div>
         <h2>{props.name}</h2>
@@ -24,7 +23,7 @@ const TestItem = (props:PropsType) => {
                 <li key={task.id} >
                     <input type="checkbox" checked={task.isDone}/>
                     <span>{task.title}</span>
-                    <button onClick={onClickDeleteHandler}>x</button>
+                    <button onClick={()=>{props.remove(task.id)}}>x</button>
                 </li>
             ))}
         </div>
