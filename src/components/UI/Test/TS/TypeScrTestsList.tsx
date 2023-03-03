@@ -9,7 +9,7 @@ const TypeScrTestsList = () => {
     {id:4,  title: 'Node.JS', isDone: false}
   ]
   let [tasks, setTasks]=React.useState(tasksTest)
-  let [filter, setFilter]=React.useState('all')
+  let [filter, setFilter]=React.useState<'all'|'active'|'completed'>('all')
   let tasksForTodoList= tasks
   if(filter==='active'){
     tasksForTodoList=tasks.filter(task => task.isDone===false)
@@ -29,7 +29,7 @@ const TypeScrTestsList = () => {
       
         <TestItem 
           remove={onClickDeleteHandler}
-          tasks={tasksTest}
+          tasks={tasksForTodoList}
           name={'tests'}/>
       
     </>
