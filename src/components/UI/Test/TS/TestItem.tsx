@@ -18,8 +18,11 @@ type PropsType ={
 const TestItem = (props:PropsType) => {
     let [text, setText]= React.useState<string>('')
     const addTask=()=>{
-        props.addTask(text)
+        if(text.trim() !== ''){
+            props.addTask(text)
         setText('')
+        }
+        
     }
     const onChangeHandler=(e:ChangeEvent<HTMLInputElement>)=>{
         setText(e.currentTarget.value)
