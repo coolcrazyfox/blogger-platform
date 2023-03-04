@@ -16,10 +16,11 @@ type PropsType ={
     changes:(value:FilterValue)=>void
     addTask:(text:string)=>void
     changeTaskStatus:(id:number, isDone:boolean)=>void
+    filter:FilterValue
 }
 const TestItem = (props:PropsType) => {
     let [error, setError]=React.useState<string | null>(null)
-    let [text, setText]= React.useState<string>('')
+    let [text, setText]= React.useState<string>('')    
     const addTask=()=>{
         if(text.trim() !== ''){
             props.addTask(text.trim())
@@ -78,9 +79,9 @@ const TestItem = (props:PropsType) => {
             })}
         </div>
         <div>
-            <button onClick={onClickBtnAllHandler}>all</button>
-            <button onClick={onClickBtnActiveHandler}>active</button>
-            <button onClick={onClickBtnCompletedHandler}>completed</button>
+            <button onClick={onClickBtnAllHandler} className={props.filter === 'all'? s.btn_active: ''}>all</button>
+            <button onClick={onClickBtnActiveHandler} className={props.filter === 'active'? s.btn_active: ''}>active</button>
+            <button onClick={onClickBtnCompletedHandler} className={props.filter === 'completed'? s.btn_active: ''}>completed</button>
         </div>
       
     </div>

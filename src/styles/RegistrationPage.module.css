@@ -14,6 +14,10 @@
 
     left: 200px;
 }
+.main_container .btn_active{
+    background: #0c6b6b;
+    color:#ebedf1
+}
 /*.navigation_box{*/
 /*    position: fixed;*/
 /*    inset: 40px 0 40px 20px;*/

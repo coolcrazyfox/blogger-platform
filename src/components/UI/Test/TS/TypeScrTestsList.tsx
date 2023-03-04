@@ -51,7 +51,8 @@ const TypeScrTestsList = () => {
           changes={changesFilter}
           remove={onClickDeleteHandler}
           tasks={tasksForTodoList}
-          name={'tests'}/>
+          name={'tests'}
+          filter={filter}/>
 
       
     </>
