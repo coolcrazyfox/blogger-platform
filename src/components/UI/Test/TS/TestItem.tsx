@@ -52,13 +52,14 @@ const TestItem = (props:PropsType) => {
             <button onClick={addTask}>+</button>
         </div>
         <div>
-            {props.tasks.map((task)=>(
-                <li key={task.id} >
-                    <input type="checkbox" checked={task.isDone}/>
-                    <span>{task.title}</span>
-                    <button onClick={()=>{props.remove(task.id)}}>x</button>
-                </li>
-            ))}
+            {props.tasks.map((task)=>{
+                const onClickHandler=()=> props.remove(task.id)
+                return( <li key={task.id} >
+                        <input type="checkbox" checked={task.isDone}/>
+                        <span>{task.title}</span>
+                        <button onClick={onClickHandler}>x</button>
+                    </li>)
+            })}
         </div>
         <div>
             <button onClick={onClickBtnAllHandler}>all</button>
