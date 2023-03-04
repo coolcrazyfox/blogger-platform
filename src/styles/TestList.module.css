@@ -4,9 +4,9 @@
     justify-content: center;
     align-items: center;     
     width: 700px;
-    height: 70vh;
+    height: 78vh;
     /* top: 50px;
     left: 200px; */
-    border: 1px solid red;
-    background-color: #baa25a;
+    border: 1px solid rgba(74, 69, 69, 0.751);
+    background-color:rgb(79, 96, 149);
 }
