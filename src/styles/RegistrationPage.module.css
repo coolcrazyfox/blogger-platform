@@ -4,34 +4,23 @@
     box-sizing: border-box;
     min-height: 100vh;
     width: 100vw;
-    background: rgba(84, 104, 97, 0.49);    
+    background: rgba(145, 236, 204, 0.49);    
 }
 .main_container .test_container{
     position: fixed;
     display: flex; 
-    justify-content: center;   
-    flex-wrap: wrap;
+    justify-content: center; 
+    padding: 5px;      
     width: 800px;
     height: 80vh;
     top: 50px;
     left: 200px;
     border: 1px solid red;
+    border-radius: 10px;
+    background-color: #85ba5a;
 }
-.main_container .btn_container{
-    display: flex;
-    border: 1px solid red;
-    height: 80px;
-    width: 400px;
-    background: #0c6b6b;
-}
-.btn_container .btn{    
-    background-color: brown;
-    color: darkgoldenrod;
-}
-.btn_container .btn_active{
-    background: #0c6b6b;
-    color:#ebedf1
-}
+
+
 /*.navigation_box{*/
 /*    position: fixed;*/
 /*    inset: 40px 0 40px 20px;*/

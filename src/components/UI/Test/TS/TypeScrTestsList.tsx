@@ -1,5 +1,7 @@
 import React from 'react'
 import TestItem from './TestItem'
+//@ts-ignore
+import s from '../../../../styles/TestList.module.css'
 
 
 export type FilterValue= 'all'|'active'|'completed'
@@ -43,7 +45,7 @@ const TypeScrTestsList = () => {
   }
     
   return (
-    <>
+    <div className={s.test_form}>
       
         <TestItem 
           changeTaskStatus={changeTaskStatus}
@@ -55,7 +57,7 @@ const TypeScrTestsList = () => {
           filter={filter}/>
 
       
-    </>
+    </div>
   )
 }
 

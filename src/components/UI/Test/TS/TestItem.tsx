@@ -1,7 +1,7 @@
 import React, { ChangeEvent, KeyboardEvent } from 'react'
 import {FilterValue} from './TypeScrTestsList'
 //@ts-ignore
-import s from '../../../../styles/TypeScrTest.module.css'
+import s from '../../../../styles/TestItem.module.css'
 
 
 type  TasksType={
@@ -51,7 +51,7 @@ const TestItem = (props:PropsType) => {
     }
     
   return (
-    <div>
+    <div className={s.items_box}>
         <h2>{props.name}</h2>
         <div>
             <input 

@@ -1,0 +1,12 @@
+.test_form{
+    position: fixed;
+    display: flex; 
+    justify-content: center;
+    align-items: center;     
+    width: 700px;
+    height: 70vh;
+    /* top: 50px;
+    left: 200px; */
+    border: 1px solid red;
+    background-color: #baa25a;
+}
