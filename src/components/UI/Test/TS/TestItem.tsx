@@ -72,9 +72,9 @@ const TestItem = (props:PropsType) => {
                     props.changeTaskStatus(task.id, newIsDoneValue)
                 }
                 return( <li key={task.id} >
-                        <input type="checkbox" checked={task.isDone} onChange={onChangeHandler}/>
-                        <span>{task.title}</span>
-                        <button onClick={onClickHandler}>x</button>
+                        <input style={{margin:'5px'}} type="checkbox" checked={task.isDone} onChange={onChangeHandler}/>
+                        <span style={{margin:'5px'}}>{task.title}</span>
+                        <button style={{margin:'5px'}} onClick={onClickHandler}>x</button>
                     </li>)
             })}
         </ul>
