@@ -15,14 +15,30 @@ type PropsType ={
     addTask:(text:string)=>void
 }
 const TestItem = (props:PropsType) => {
-    const [text, setText]= React.useState<string>('')
+    let [text, setText]= React.useState<string>('')
+    const addTask=()=>{
+        props.addTask(text)
+        setText('')
+    }
+    const onChangeHandler=()=>{
+        
+    }
     
   return (
     <div>
         <h2>{props.name}</h2>
         <div>
-            <input type="text" value={text} onChange={(e)=>setText(e.currentTarget.value)}/>
-            <button onClick={()=>props.addTask(text)}>+</button>
+            <input 
+                type="text"
+                value={text}
+                onChange={(e)=>setText(e.currentTarget.value)}
+                onKeyDown={(e)=>{
+                    if(e.key === 'Enter'){
+                        addTask()
+                    }
+                }}
+                />
+            <button onClick={addTask}>+</button>
         </div>
         <div>
             {props.tasks.map((task)=>(
