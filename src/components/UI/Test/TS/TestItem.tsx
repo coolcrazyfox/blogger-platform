@@ -19,8 +19,8 @@ const TestItem = (props:PropsType) => {
     let [text, setText]= React.useState<string>('')
     const addTask=()=>{
         if(text.trim() !== ''){
-            props.addTask(text)
-        setText('')
+            props.addTask(text.trim())
+            setText('')
         }
         
     }
