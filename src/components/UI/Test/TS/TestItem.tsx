@@ -13,6 +13,7 @@ type PropsType ={
     remove:(taskId:number)=>void
     changes:(value:FilterValue)=>void
     addTask:(text:string)=>void
+    changeTaskStatus:(id:number, isDone:boolean)=>void
 }
 const TestItem = (props:PropsType) => {
     let [text, setText]= React.useState<string>('')
@@ -54,6 +55,10 @@ const TestItem = (props:PropsType) => {
         <div>
             {props.tasks.map((task)=>{
                 const onClickHandler=()=> props.remove(task.id)
+                const onChangeHandler=(e:ChangeEvent<HTMLInputElement>)=>{
+                    let newIsDoneValue = e.currentTarget.checked
+                    props.changeTaskStatus(task.id, newIsDoneValue)
+                }
                 return( <li key={task.id} >
                         <input type="checkbox" checked={task.isDone}/>
                         <span>{task.title}</span>

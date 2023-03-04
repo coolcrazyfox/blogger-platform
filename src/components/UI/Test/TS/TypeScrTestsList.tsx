@@ -33,16 +33,25 @@ const TypeScrTestsList = () => {
     let newTasks=[...tasks, taskNew]
     setTasks(newTasks)
   }
+  const changeTaskStatus=(id:number, isDone:boolean)=>{
+    let task = tasks.find(t=> t.id === id)
+    if(task){
+      task.isDone = isDone
+      setTasks([...tasks])
+    }
+  }
     
   return (
     <>
       
         <TestItem 
+          changeTaskStatus={changeTaskStatus}
           addTask={addTask}
           changes={changesFilter}
           remove={onClickDeleteHandler}
           tasks={tasksForTodoList}
           name={'tests'}/>
+
       
     </>
   )
