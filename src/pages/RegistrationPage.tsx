@@ -38,9 +38,6 @@ const RegistrationPage = () => {
             <div className={s.test_container}>
                 <TypeScrTestsList/>
             </div>
-            <div>test</div>
-            
-
 
             {/*</div>*/}
         </div>
