@@ -1,5 +1,7 @@
 import React, { ChangeEvent, KeyboardEvent } from 'react'
 import {FilterValue} from './TypeScrTestsList'
+//@ts-ignore
+import s from '../../../../styles/TypeScrTest.module.css'
 
 
 type  TasksType={
@@ -16,11 +18,14 @@ type PropsType ={
     changeTaskStatus:(id:number, isDone:boolean)=>void
 }
 const TestItem = (props:PropsType) => {
+    let [error, setError]=React.useState<string | null>(null)
     let [text, setText]= React.useState<string>('')
     const addTask=()=>{
         if(text.trim() !== ''){
             props.addTask(text.trim())
             setText('')
+        }else{
+            setError('Title is required')
         }
         
     }
@@ -28,6 +33,7 @@ const TestItem = (props:PropsType) => {
         setText(e.currentTarget.value)
     }
     const onKeyPressHandler =(e:KeyboardEvent<HTMLInputElement>)=>{
+        setError(null)
         if(e.key === 'Enter'){
             addTask()
         }
@@ -52,8 +58,10 @@ const TestItem = (props:PropsType) => {
                 value={text}
                 onChange={onChangeHandler}
                 onKeyDown={onKeyPressHandler}
+                className={error? s.error: ''}
                 />
             <button onClick={addTask}>+</button>
+            {error && <div className={s.error_message}>{error}</div>}
         </div>
         <div>
             {props.tasks.map((task)=>{
