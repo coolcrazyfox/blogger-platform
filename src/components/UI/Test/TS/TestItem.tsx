@@ -15,6 +15,7 @@ type PropsType ={
     addTask:()=>void
 }
 const TestItem = (props:PropsType) => {
+    const [name, setName]= React.useState<string>('')
     
   return (
     <div>
