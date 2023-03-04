@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react'
+import React, { ChangeEvent, KeyboardEvent } from 'react'
 import {FilterValue} from './TypeScrTestsList'
 
 
@@ -23,6 +23,12 @@ const TestItem = (props:PropsType) => {
     const onChangeHandler=(e:ChangeEvent<HTMLInputElement>)=>{
         setText(e.currentTarget.value)
     }
+    const onKeyPressHandler =(e:KeyboardEvent<HTMLInputElement>)=>{
+        if(e.key === 'Enter'){
+            addTask()
+        }
+            
+    }
     
   return (
     <div>
@@ -32,11 +38,7 @@ const TestItem = (props:PropsType) => {
                 type="text"
                 value={text}
                 onChange={onChangeHandler}
-                onKeyDown={(e)=>{
-                    if(e.key === 'Enter'){
-                        addTask()
-                    }
-                }}
+                onKeyDown={onKeyPressHandler}
                 />
             <button onClick={addTask}>+</button>
         </div>
