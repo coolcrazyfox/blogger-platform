@@ -12,17 +12,17 @@ type PropsType ={
     tasks:Array<TasksType>
     remove:(taskId:number)=>void
     changes:(value:FilterValue)=>void
-    addTask:()=>void
+    addTask:(text:string)=>void
 }
 const TestItem = (props:PropsType) => {
-    const [name, setName]= React.useState<string>('')
+    const [text, setText]= React.useState<string>('')
     
   return (
     <div>
         <h2>{props.name}</h2>
         <div>
-            <input type="text" />
-            <button onClick={()=>props.addTask()}>+</button>
+            <input type="text" value={text} onChange={(e)=>setText(e.currentTarget.value)}/>
+            <button onClick={()=>props.addTask(text)}>+</button>
         </div>
         <div>
             {props.tasks.map((task)=>(

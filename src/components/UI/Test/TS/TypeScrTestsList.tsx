@@ -28,8 +28,8 @@ const TypeScrTestsList = () => {
   const changesFilter=(value: FilterValue)=>{
     setFilter(value)
   }
-  const addTask=()=>{
-    let taskNew= {id:4,  title: 'new task', isDone: false}
+  const addTask=(text:string)=>{
+    let taskNew= {id:4,  title: text, isDone: false}
     let newTasks=[...tasks, taskNew]
     setTasks(newTasks)
   }
