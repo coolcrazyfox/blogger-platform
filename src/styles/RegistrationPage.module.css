@@ -8,13 +8,27 @@
 }
 .main_container .test_container{
     position: fixed;
+    display: flex; 
+    justify-content: center;   
+    flex-wrap: wrap;
     width: 800px;
     height: 80vh;
     top: 50px;
-
     left: 200px;
+    border: 1px solid red;
 }
-.main_container .btn_active{
+.main_container .btn_container{
+    display: flex;
+    border: 1px solid red;
+    height: 80px;
+    width: 400px;
+    background: #0c6b6b;
+}
+.btn_container .btn{    
+    background-color: brown;
+    color: darkgoldenrod;
+}
+.btn_container .btn_active{
     background: #0c6b6b;
     color:#ebedf1
 }

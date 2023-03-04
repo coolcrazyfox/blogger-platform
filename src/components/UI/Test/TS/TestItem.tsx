@@ -78,10 +78,10 @@ const TestItem = (props:PropsType) => {
                     </li>)
             })}
         </div>
-        <div>
-            <button onClick={onClickBtnAllHandler} className={props.filter === 'all'? s.btn_active: ''}>all</button>
-            <button onClick={onClickBtnActiveHandler} className={props.filter === 'active'? s.btn_active: ''}>active</button>
-            <button onClick={onClickBtnCompletedHandler} className={props.filter === 'completed'? s.btn_active: ''}>completed</button>
+        <div className={s.btn_container}>
+            <button onClick={onClickBtnAllHandler} className={props.filter === 'all'? s.btn_active: s.btn}>all</button>
+            <button onClick={onClickBtnActiveHandler} className={props.filter === 'active'? s.btn_active: s.btn}>active</button>
+            <button onClick={onClickBtnCompletedHandler} className={props.filter === 'completed'? s.btn_active: s.btn}>completed</button>
         </div>
       
     </div>
