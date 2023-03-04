@@ -3,7 +3,16 @@
     padding: 0;
     box-sizing: border-box;
     min-height: 100vh;
-    background: rgba(84, 104, 97, 0.49);
+    width: 100vw;
+    background: rgba(84, 104, 97, 0.49);    
+}
+.main_container .test_container{
+    position: fixed;
+    width: 800px;
+    height: 80vh;
+    top: 50px;
+
+    left: 200px;
 }
 /*.navigation_box{*/
 /*    position: fixed;*/

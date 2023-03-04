@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
+//@ts-ignore
 import s from '../styles/RegistrationPage.module.css'
 import {initialState} from "../components/NavBar";
 import {Link} from "react-router-dom";
+import TypeScrTestsList from '../components/UI/Test/TS/TypeScrTestsList';
 
 const RegistrationPage = () => {
     const tasks = initialState
-    const [isActive, setIsActive] = useState(false)
-    const [liActive, setLiActive] = useState(false)
+    const [isActive, setIsActive] = useState<boolean>(false)
+    const [liActive, setLiActive] = useState<boolean>(false)
     const [activeId, setActiveId] = useState(tasks[0].id)
     const handelClick = () => {
         // setActive(current => !current)
@@ -33,6 +35,11 @@ const RegistrationPage = () => {
                     )}
                 </ul>
             </div>
+            <div className={s.test_container}>
+                <TypeScrTestsList/>
+            </div>
+            <div>test</div>
+            
 
 
             {/*</div>*/}
