@@ -64,7 +64,7 @@ const TestItem = (props:PropsType) => {
             <button onClick={addTask}>+</button>
             {error && <div className={s.error_message}>{error}</div>}
         </div>
-        <div>
+        <ul className={s.ul}>
             {props.tasks.map((task)=>{
                 const onClickHandler=()=> props.remove(task.id)
                 const onChangeHandler=(e:ChangeEvent<HTMLInputElement>)=>{
@@ -77,7 +77,7 @@ const TestItem = (props:PropsType) => {
                         <button onClick={onClickHandler}>x</button>
                     </li>)
             })}
-        </div>
+        </ul>
         <div className={s.btn_container}>
             <button onClick={onClickBtnAllHandler} className={props.filter === 'all'? s.btn_active: s.btn}>all</button>
             <button onClick={onClickBtnActiveHandler} className={props.filter === 'active'? s.btn_active: s.btn}>active</button>

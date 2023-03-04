@@ -8,6 +8,15 @@
     min-height: 80px;
     width: 670px;
 }
+.items_box .ul{
+    color: azure;
+    list-style: none;
+    
+}
+.ul li{
+    padding: 5px;
+    margin: 2px;
+}
 .btn_container .btn{    
     background-color: rgb(182, 131, 131);
     padding: 2px;
