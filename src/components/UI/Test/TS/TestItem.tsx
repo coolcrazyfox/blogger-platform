@@ -29,6 +29,15 @@ const TestItem = (props:PropsType) => {
         }
             
     }
+    const onClickBtnAllHandler=()=>{
+        props.changes('all')
+    }
+    const onClickBtnActiveHandler=()=>{
+        props.changes('active')
+    }
+    const onClickBtnCompletedHandler=()=>{
+        props.changes('completed')
+    }
     
   return (
     <div>
@@ -52,9 +61,9 @@ const TestItem = (props:PropsType) => {
             ))}
         </div>
         <div>
-            <button onClick={()=>{props.changes('all')}}>all</button>
-            <button onClick={()=>{props.changes('active')}}>active</button>
-            <button onClick={()=>{props.changes('completed')}}>completed</button>
+            <button onClick={onClickBtnAllHandler}>all</button>
+            <button onClick={onClickBtnActiveHandler}>active</button>
+            <button onClick={onClickBtnCompletedHandler}>completed</button>
         </div>
       
     </div>
