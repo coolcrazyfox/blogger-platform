@@ -5,7 +5,20 @@ import {initialState} from "../components/NavBar";
 import {Link} from "react-router-dom";
 import TypeScrTestsList from '../components/UI/Test/TS/TypeScrTestsList';
 
+export type TodolistsType={
+    id: number
+    title: string
+    filter: string
+  }
 const RegistrationPage = () => {
+    let [todolists, setTodolists] = React.useState<Array<TodolistsType>>(
+        [
+            {id: Date.now(), title: 'What to learn', filter: 'all'},
+            {id: Date.now(), title: 'What to buy', filter: 'all'},
+        ]
+    )
+
+
     const tasks = initialState
     const [isActive, setIsActive] = useState<boolean>(false)
     const [liActive, setLiActive] = useState<boolean>(false)
@@ -36,7 +49,13 @@ const RegistrationPage = () => {
                 </ul>
             </div>
             <div className={s.test_container}>
-                <TypeScrTestsList/>
+                {todolists.map(t=>{
+                    return <TypeScrTestsList
+                            
+
+                            />
+                })}
+                
             </div>
 
             {/*</div>*/}

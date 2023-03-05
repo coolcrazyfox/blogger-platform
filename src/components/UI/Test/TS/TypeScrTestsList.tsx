@@ -5,19 +5,10 @@ import s from '../../../../styles/TestList.module.css'
 
 
 export type FilterValue= 'all'|'active'|'completed'
-export type TodolistsType={
-  id: number
-  title: string
-  filter: string
-}
+
 
 const TypeScrTestsList = () => {
-  let [todolists, setTodolists] = React.useState<Array<TodolistsType>>(
-    [
-        {id: Date.now(), title: 'What to learn', filter: 'all'},
-        {id: Date.now(), title: 'What to buy', filter: 'all'},
-    ]
-)
+  
   let tasksTest=[
     {id:1,  title: 'JS', isDone: false},
     {id:2,  title: 'Java', isDone: true},
