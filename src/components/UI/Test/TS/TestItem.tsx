@@ -71,7 +71,7 @@ const TestItem = (props:PropsType) => {
                     let newIsDoneValue = e.currentTarget.checked
                     props.changeTaskStatus(task.id, newIsDoneValue)
                 }
-                return( <li key={task.id} >
+                return( <li key={task.id} className={task.isDone? s.isDone : ''} >
                         <input style={{margin:'5px'}} type="checkbox" checked={task.isDone} onChange={onChangeHandler}/>
                         <span style={{margin:'5px'}}>{task.title}</span>
                         <button style={{margin:'5px'}} onClick={onClickHandler}>x</button>
