@@ -17,6 +17,9 @@
     padding: 5px;
     margin: 2px;
 }
+.ul li .is-done {
+    opacity: 0.5;
+  }
 .btn_container .btn{    
     background-color: rgb(182, 131, 131);
     padding: 2px;
