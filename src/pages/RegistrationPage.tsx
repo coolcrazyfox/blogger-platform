@@ -17,6 +17,13 @@ const RegistrationPage = () => {
             {id: Date.now(), title: 'What to buy', filter: 'all'},
         ]
     )
+    let tasksTest=[
+        {id:1,  title: 'JS', isDone: false},
+        {id:2,  title: 'Java', isDone: true},
+        {id:3,  title: 'NextJS', isDone: false},
+        {id:4,  title: 'Node.JS', isDone: false}
+      ]
+      let [tasks, setTasks]=React.useState(tasksTest)
 
 
     const state = initialState
@@ -52,10 +59,10 @@ const RegistrationPage = () => {
                 {todolists.map(t=>{
                     let tasksForTodolist= tasks
                     if(t.filter === 'active' ){
-                        tasksForTodolist = tasks.filter(task=>task.isdone ===false)
+                        tasksForTodolist = tasks.filter(task=>task.isDone ===false)
                     }
                     if(t.filter === 'completed' ){
-                        tasksForTodolist = tasks.filter(task=>task.isdone ===true)
+                        tasksForTodolist = tasks.filter(task=>task.isDone ===true)
                     }
                     return <TypeScrTestsList key={t.id}
                                             id={t.id}
