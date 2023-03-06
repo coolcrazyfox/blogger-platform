@@ -50,6 +50,13 @@ const RegistrationPage = () => {
             </div>
             <div className={s.test_container}>
                 {todolists.map(t=>{
+                    let tasksForTodolist= tasks
+                    if(t.filter === 'active' ){
+                        tasksForTodolist = tasks.filter(task=>task.isdone ===false)
+                    }
+                    if(t.filter === 'completed' ){
+                        tasksForTodolist = tasks.filter(task=>task.isdone ===true)
+                    }
                     return <TypeScrTestsList key={t.id}
                                             id={t.id}
                                             title={t.title}
