@@ -24,6 +24,7 @@ const RegistrationPage = () => {
         {id:4,  title: 'Node.JS', isDone: false}
       ]
       let [tasks, setTasks]=React.useState(tasksTest)
+      
 
 
     const state = initialState

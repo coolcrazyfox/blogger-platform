@@ -5,7 +5,26 @@ import s from '../../../../styles/TestList.module.css'
 
 
 export type FilterValue= 'all'|'active'|'completed'
-
+type  TodoListType={
+    id: number
+    title: string
+    filter: string
+}
+type  TasksType={
+  id: number
+  title: string
+  isDone: boolean
+}
+type PropsType ={    
+  name: string
+  tasks:Array<TasksType>
+  todolist:Array<TodoListType>
+  remove:(taskId:number)=>void
+  changes:(value:FilterValue)=>void
+  addTask:(text:string)=>void
+  changeTaskStatus:(id:number, isDone:boolean)=>void
+  filter:FilterValue
+}
 
 const TypeScrTestsList = () => {
   
