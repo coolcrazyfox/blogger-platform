@@ -1,11 +1,11 @@
 import React, { ChangeEvent, KeyboardEvent } from 'react'
-import {FilterValue} from './TypeScrTestsList'
+import {FilterValue} from '../../../../pages/RegistrationPage'
 //@ts-ignore
 import s from '../../../../styles/TestItem.module.css'
 
 
 type  TasksType={
-    id: number
+    taskId: number
     title: string 
     isDone: boolean
 }
@@ -66,12 +66,12 @@ const TestItem = (props:PropsType) => {
         </div>
         <ul className={s.ul}>
             {props.tasks.map((task)=>{
-                const onClickHandler=()=> props.remove(task.id)
+                const onClickHandler=()=> props.remove(task.taskId)
                 const onChangeHandler=(e:ChangeEvent<HTMLInputElement>)=>{
                     let newIsDoneValue = e.currentTarget.checked
-                    props.changeTaskStatus(task.id, newIsDoneValue)
+                    props.changeTaskStatus(task.taskId, newIsDoneValue)
                 }
-                return( <li key={task.id} className={task.isDone? s.isDone : ''} >
+                return( <li key={task.taskId} className={task.isDone? s.isDone : ''} >
                         <input style={{margin:'5px'}} type="checkbox" checked={task.isDone} onChange={onChangeHandler}/>
                         <span style={{margin:'5px'}}>{task.title}</span>
                         <button style={{margin:'5px'}} onClick={onClickHandler}>x</button>
