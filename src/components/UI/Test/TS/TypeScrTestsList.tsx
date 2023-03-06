@@ -19,14 +19,14 @@ type PropsType ={
   name: string
   tasks:Array<TasksType>
   todolist:Array<TodoListType>
-  remove:(taskId:number)=>void
-  changes:(value:FilterValue)=>void
+  removeTask:(taskId:number)=>void
+  changeFilter:(value:FilterValue)=>void
   addTask:(text:string)=>void
   changeTaskStatus:(id:number, isDone:boolean)=>void
   filter:FilterValue
 }
 
-const TypeScrTestsList = () => {
+const TypeScrTestsList = (props:PropsType) => {
   
   let tasksTest=[
     {id:1,  title: 'JS', isDone: false},
@@ -42,8 +42,7 @@ const TypeScrTestsList = () => {
   }
   if(filter==='completed'){
     tasksForTodoList=tasks.filter(task => task.isDone===true)
-  }
-  
+  } 
   
   const onClickDeleteHandler=(id:number)=>{
     let filteredTasks = tasks.filter(t=> t.id!==id)
