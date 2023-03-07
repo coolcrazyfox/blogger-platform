@@ -15,10 +15,13 @@ export type TodolistsType={
     [key: number]: Array<TaskType>
 } 
 const RegistrationPage = () => {
+    let todolistId1 = Date.now();
+    let todolistId2 = Date.now();
+    
     let [todolists, setTodolists] = React.useState<Array<TodolistsType>>(
         [
-            {id: Date.now(), title: 'What to learn', filter: 'all'},
-            {id: Date.now(), title: 'What to buy', filter: 'all'},
+            {id: todolistId1, title: 'What to learn', filter: 'all'},
+            {id: todolistId2, title: 'What to buy', filter: 'all'},
         ]
     )
     let tasksTest=[
