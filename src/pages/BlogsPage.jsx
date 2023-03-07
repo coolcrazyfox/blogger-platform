@@ -10,13 +10,12 @@ import BlogForm from "../components/UI/Blogs/BlogForm";
 import {useBlogs} from "../hooks/useBlogs";
 import axios from "axios";
 import { themes } from './Hero';
-//@ts-ignore
 import { ThemeProvider } from 'styled-components';
 import PostService from '../API/PostService';
 import { addBlogTC, getBlogsTC } from '../redux/BlogsReducer';
 import { useSelector } from 'react-redux';
-import { selectBlogs, selectBlogsQuery } from '../redux/selectors/blogs-selectors';
-import { useAppDispatch } from '../store/store';
+import { selectBlogs, selectBlogsQuery } from './../redux/selectors/blogs-selectors';
+import { useAppDispatch } from './../store/store';
 
 
 export const initialTasks = [
@@ -98,7 +97,7 @@ const BlogsPage = () => {
             const jsonData= await response.json()
             console.log('data', jsonData)
             // setItems(jsonData)
-        }catch(e:any){
+        }catch(e){
             console.error(e.message)
         }
     }
@@ -132,13 +131,13 @@ const BlogsPage = () => {
 
 
     // add new blog
-    const createNewBlog = (newBlog:any) => {
+    const createNewBlog = (newBlog) => {
         setBlogs([...blogs, newBlog])
         console.log('input', newBlog)
     }
 
     //remove blog
-    const removeBlog = (blog:any) => {
+    const removeBlog = (blog) => {
         setBlogs(blogs.filter(b => b.id !== blog.id))
     }
     //sort blogs by select values
