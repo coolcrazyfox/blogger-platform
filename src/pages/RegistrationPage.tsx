@@ -11,66 +11,67 @@ export type TodolistsType={
     title: string
     filter: string
   }
-  export type TasksStateType = {
+export type TasksStateType = {
     [key: number]: Array<TaskType>
 } 
 const RegistrationPage = () => {
-    let todolistId1 = Date.now();
-    let todolistId2 = Date.now();
-    
-    let [todolists, setTodolists] = React.useState<Array<TodolistsType>>(
+
+  let todolistId1 = Date.now();
+  let todolistId2 = Date.now();
+
+  let [todolists, setTodolists] = React.useState<Array<TodolistsType>>(
         [
             {id: todolistId1, title: 'What to learn', filter: 'all'},
             {id: todolistId2, title: 'What to buy', filter: 'all'},
         ]
     )
-    let tasksTest=[
+  let tasksTest=[
         {taskId:1,  title: 'JS', isDone: false},
         {taskId:2,  title: 'Java', isDone: true},
         {taskId:3,  title: 'NextJS', isDone: false},
         {taskId:4,  title: 'Node.JS', isDone: false}
       ]
-      let [tasks, setTasks]=React.useState<Array<TasksType>>(tasksTest)
-      let [filter, setFilter]=React.useState<FilterValue>('all')
-      let tasksForTodoList= tasks
-      if(filter==='active'){
+  let [tasks, setTasks]=React.useState<TasksStateType>(tasksTest)
+  let [filter, setFilter]=React.useState<FilterValue>('all')
+  let tasksForTodoList= tasks
+  if(filter==='active'){
         tasksForTodoList=tasks.filter(task => task.isDone===false)
       }
-      if(filter==='completed'){
+  if(filter==='completed'){
         tasksForTodoList=tasks.filter(task => task.isDone===true)
       } 
       
-      const onClickDeleteHandler=(id:number)=>{
-        let filteredTasks = tasks.filter(t=> t.taskId!==id)
+  const onClickDeleteHandler=(id:number)=>{
+    let filteredTasks = tasks.filter(t=> t.taskId!==id)
         setTasks(filteredTasks)
       }
-      const changesFilter=(value: FilterValue)=>{
+  const changesFilter=(value: FilterValue)=>{
         setFilter(value)
       }
-      const addTask=(text:string)=>{
+  const addTask=(text:string)=>{
         let taskNew= {taskId:Date.now(),  title: text, isDone: false}
         let newTasks=[...tasks, taskNew]
         setTasks(newTasks)
       }
-      const changeTaskStatus=(id:number, isDone:boolean)=>{
+  const changeTaskStatus=(id:number, isDone:boolean)=>{
         let task = tasks.find(t=> t.taskId === id)
         if(task){
           task.isDone = isDone
           setTasks([...tasks])
         }
-      }
+      }   
 
 
 
-    const state = initialState
-    const [isActive, setIsActive] = useState<boolean>(false)
-    const [liActive, setLiActive] = useState<boolean>(false)
-    const [activeId, setActiveId] = useState(state[0].id)
-    const handelClick = () => {
+  const state = initialState
+  const [isActive, setIsActive] = useState<boolean>(false)
+  const [liActive, setLiActive] = useState<boolean>(false)
+  const [activeId, setActiveId] = useState(state[0].id)
+  const handelClick = () => {
         // setActive(current => !current)
         setIsActive(!isActive)
     }
-    return (
+  return (
         <div className={s.main_container}>
 
             {/*<div className={isActive? s.navigation_box: ''}>*/}
