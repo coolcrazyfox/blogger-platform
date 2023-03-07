@@ -151,24 +151,32 @@ function addTodolist(title: string) {
                 </ul>
             </div>
             <div className={s.test_container}>
-                {todolists.map(t=>{
-                    let tasksForTodolist= tasks
-                    if(t.filter === 'active' ){
-                        tasksForTodolist = tasks.filter(task=>task.isDone ===false)
-                    }
-                    if(t.filter === 'completed' ){
-                        tasksForTodolist = tasks.filter(task=>task.isDone ===true)
-                    }
-                    return <TypeScrTestsList key={t.id}
-                                            id={t.id}
-                                            title={t.title}
-                                            tasks={tasksForTodolist}
-                                            removeTask={removeTask}
-                                            changeFilter={changeFilter}
-                                            addTask={addTask}
-                                            changeTaskStatus={changeTaskStatus}
-                                            filter={t.filter}
-                            />
+                {todolists.map(tl=>{
+                  let allTodolistTasks = tasks[tl.id];
+                  let tasksForTodolist= allTodolistTasks
+
+                  if(tl.filter === 'active' ){
+                    tasksForTodolist = allTodolistTasks.filter(task=>task.isDone ===false)
+                  }
+                  if(tl.filter === 'completed' ){
+                    tasksForTodolist = allTodolistTasks.filter(task=>task.isDone ===true)
+                  }
+                  
+                  return <TypeScrTestsList
+                                key={tl.id}
+
+                                id={tl.id}
+                                title={tl.title}
+                                tasks={tasksForTodolist}
+                                removeTask={removeTask}
+                                changeFilter={changeFilter}
+                                addTask={addTask}
+                                changeTaskStatus={changeStatus}
+                                filter={tl.filter}
+                                removeTodolist={removeTodolist}
+                                changeTaskTitle={changeTaskTitle}
+                                changeTodolistTitle={changeTodolistTitle}
+                           />
                 })}
                 
             </div>
