@@ -11,11 +11,9 @@ export type TodolistsType={
     title: string
     filter: string
   }
-export  type  TasksType={
-    taskId: number
-    title: string
-    isDone: boolean
-  }  
+  export type TasksStateType = {
+    [key: number]: Array<TaskType>
+} 
 const RegistrationPage = () => {
     let [todolists, setTodolists] = React.useState<Array<TodolistsType>>(
         [
