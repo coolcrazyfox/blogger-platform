@@ -54,14 +54,18 @@ const TypeScrTestsList = React.memo((props: PropsType) => {
   return (
     <div className={s.test_form}>
       
-        <TestItem 
-          changeTaskStatus={props.changeTaskStatus}
-          addTask={props.addTask}
-          changes={props.changesFilter}
-          remove={props.onClickDeleteHandler}
-          tasks={props.tasks}
-          name={'tests'}
-          filter={filter}/>
+        <TestItem           
+          addTask={addTask}
+          changeTodolistTitle={changeTodolistTitle}
+          removeTodolist={removeTodolist}
+          name={props.title}
+          tasksForTodolist={tasksForTodolist}
+          onAllClickHandler={onAllClickHandler}
+          onActiveClickHandler={onActiveClickHandler}
+          onCompletedClickHandler={onCompletedClickHandler}
+          filter={props.filter}
+          />
+          
 
       
     </div>
