@@ -165,7 +165,6 @@ function addTodolist(title: string) {
                   
                   return <TypeScrTestsList
                                 key={tl.id}
-
                                 id={tl.id}
                                 title={tl.title}
                                 tasks={tasksForTodolist}

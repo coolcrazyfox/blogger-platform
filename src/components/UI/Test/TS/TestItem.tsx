@@ -1,5 +1,5 @@
 import React, { ChangeEvent, KeyboardEvent } from 'react'
-import {FilterValue} from '../../../../pages/RegistrationPage'
+import {FilterValuesType} from '../../../../pages/RegistrationPage'
 //@ts-ignore
 import s from '../../../../styles/TestItem.module.css'
 
@@ -13,7 +13,7 @@ type PropsType ={
     name: string
     tasks:Array<TasksType>
     remove:(taskId:number)=>void
-    changes:(value:FilterValue)=>void
+    changes:(value:FilterValuesType)=>void
     addTask:(text:string)=>void
     changeTaskStatus:(id:number, isDone:boolean)=>void
     filter:FilterValue

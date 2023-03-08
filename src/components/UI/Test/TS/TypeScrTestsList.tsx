@@ -12,17 +12,17 @@ export type  TaskType={
   isDone: boolean
 }
 type PropsType ={  
-  id: string
+  id: number
   title: string
   tasks: Array<TaskType>
-  removeTask: (taskId: string, todolistId: string) => void
-  changeFilter: (value: FilterValuesType, todolistId: string) => void
-  addTask: (title: string, todolistId: string) => void
-  changeTaskStatus: (id: string, isDone: boolean, todolistId: string) => void
-  removeTodolist: (id: string) => void
-  changeTodolistTitle: (id: string, newTitle: string) => void
+  removeTask: (taskId: number, todolistId: number) => void
+  changeFilter: (value: FilterValuesType, todolistId: number) => void
+  addTask: (title: string, todolistId: number) => void
+  changeTaskStatus: (id: number, isDone: boolean, todolistId: number) => void
+  removeTodolist: (id: number) => void
+  changeTodolistTitle: (id: number, newTitle: string) => void
   filter: FilterValuesType
-  changeTaskTitle: (taskId: string, newTitle: string, todolistId: string) => void
+  changeTaskTitle: (taskId: number, newTitle: string, todolistId: number) => void
 }
 
 const TypeScrTestsList = React.memo((props: PropsType) => {
