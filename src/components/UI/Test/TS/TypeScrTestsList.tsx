@@ -4,14 +4,9 @@ import TestItem from './TestItem'
 import s from '../../../../styles/TestList.module.css'
 
 
-// export type FilterValue= 'all'|'active'|'completed'
-type  TodoListType={
-    id: number
-    title: string
-    filter: string
-}
+
 type  TasksType={
-  taskId: number
+  id: number
   title: string
   isDone: boolean
 }
