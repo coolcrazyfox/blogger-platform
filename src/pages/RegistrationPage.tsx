@@ -7,6 +7,7 @@ import TypeScrTestsList from '../components/UI/Test/TS/TypeScrTestsList';
 import {TaskType} from '../components/UI/Test/TS/TypeScrTestsList'
 
 export type FilterValuesType= 'all'|'active'|'completed'
+
 export type TodolistType={
     id: number
     title: string
