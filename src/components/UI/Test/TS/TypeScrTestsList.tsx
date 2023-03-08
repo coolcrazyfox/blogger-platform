@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {ChangeEvent, useCallback} from 'react';
 import TestItem from './TestItem'
 //@ts-ignore
 import s from '../../../../styles/TestList.module.css'
@@ -25,43 +25,31 @@ type PropsType ={
   changeTaskTitle: (taskId: string, newTitle: string, todolistId: string) => void
 }
 
-const TypeScrTestsList = (props:PropsType) => {
-  
-  // let tasksTest=[
-  //   {id:1,  title: 'JS', isDone: false},
-  //   {id:2,  title: 'Java', isDone: true},
-  //   {id:3,  title: 'NextJS', isDone: false},
-  //   {id:4,  title: 'Node.JS', isDone: false}
-  // ]
-  // let [tasks, setTasks]=React.useState(tasksTest)
-  // let [filter, setFilter]=React.useState<FilterValue>('all')
-  // let tasksForTodoList= tasks
-  // if(filter==='active'){
-  //   tasksForTodoList=tasks.filter(task => task.isDone===false)
-  // }
-  // if(filter==='completed'){
-  //   tasksForTodoList=tasks.filter(task => task.isDone===true)
-  // } 
-  
-  // const onClickDeleteHandler=(id:number)=>{
-  //   let filteredTasks = tasks.filter(t=> t.id!==id)
-  //   setTasks(filteredTasks)
-  // }
-  // const changesFilter=(value: FilterValue)=>{
-  //   setFilter(value)
-  // }
-  // const addTask=(text:string)=>{
-  //   let taskNew= {id:Date.now(),  title: text, isDone: false}
-  //   let newTasks=[...tasks, taskNew]
-  //   setTasks(newTasks)
-  // }
-  // const changeTaskStatus=(id:number, isDone:boolean)=>{
-  //   let task = tasks.find(t=> t.id === id)
-  //   if(task){
-  //     task.isDone = isDone
-  //     setTasks([...tasks])
-  //   }
-  // }
+const TypeScrTestsList = React.memo((props: PropsType) => {
+
+  const addTask = useCallback((title: string) => {
+      props.addTask(title, props.id);
+  }, [props.addTask, props.id])
+
+  const removeTodolist = useCallback(() => {
+      props.removeTodolist(props.id);
+  }, [props.removeTodolist, props.id])
+  const changeTodolistTitle = useCallback((title: string) => {
+      props.changeTodolistTitle(props.id, title);
+  }, [props.changeTodolistTitle, props.id])
+
+  const onAllClickHandler = useCallback(() => props.changeFilter("all", props.id), [props.id, props.changeFilter]);
+  const onActiveClickHandler = useCallback(() => props.changeFilter("active", props.id), [props.id, props.changeFilter]);
+  const onCompletedClickHandler = useCallback(() => props.changeFilter("completed", props.id), [props.id, props.changeFilter]);
+
+  let tasksForTodolist = props.tasks;
+
+  if (props.filter === "active") {
+      tasksForTodolist = tasksForTodolist.filter(t => t.isDone === false);
+  }
+  if (props.filter === "completed") {
+      tasksForTodolist = tasksForTodolist.filter(t => t.isDone === true);
+  }
     
   return (
     <div className={s.test_form}>
@@ -78,6 +66,6 @@ const TypeScrTestsList = (props:PropsType) => {
       
     </div>
   )
-}
+})
 
 export default TypeScrTestsList
