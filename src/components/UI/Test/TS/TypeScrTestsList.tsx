@@ -2,20 +2,21 @@ import React from 'react'
 import TestItem from './TestItem'
 //@ts-ignore
 import s from '../../../../styles/TestList.module.css'
+import { FilterValuesType } from '../../../../pages/RegistrationPage'
 
 
 
-type  TasksType={
+export type  TaskType={
   id: number
   title: string
   isDone: boolean
 }
-type PropsType ={     
+type PropsType ={  
+  id: number   
   title: string
-  tasks:Array<TasksType>
-  todolist:Array<TodoListType>
-  removeTask:(taskId:number)=>void
-  changeFilter:(value:FilterValue)=>void
+  tasks:Array<TaskType>  
+  removeTask:(taskId:number, todolistId: number)=>void
+  changeFilter:(value:FilterValuesType, todolistId: number)=>void
   addTask:(text:string)=>void
   changeTaskStatus:(id:number, isDone:boolean)=>void
   filter:FilterValue

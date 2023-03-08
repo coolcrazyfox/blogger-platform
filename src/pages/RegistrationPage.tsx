@@ -4,6 +4,7 @@ import s from '../styles/RegistrationPage.module.css'
 import {initialState} from "../components/NavBar";
 import {Link} from "react-router-dom";
 import TypeScrTestsList from '../components/UI/Test/TS/TypeScrTestsList';
+import {TaskType} from '../components/UI/Test/TS/TypeScrTestsList'
 
 export type FilterValuesType= 'all'|'active'|'completed'
 export type TodolistType={
