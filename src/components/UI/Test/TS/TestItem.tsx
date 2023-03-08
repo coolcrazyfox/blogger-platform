@@ -9,14 +9,16 @@ type  TasksType={
     title: string 
     isDone: boolean
 }
-type PropsType ={    
-    name: string
+type PropsType ={  
+    id: number  
+    title: string
     tasks:Array<TasksType>
-    remove:(taskId:number)=>void
+    removeTodolist:(taskId:number)=>void
     changes:(value:FilterValuesType)=>void
     addTask:(text:string)=>void
     changeTaskStatus:(id:number, isDone:boolean)=>void
-    filter:FilterValue
+    // changeTodolistTitle:(id:number, newTitle: string)=>void
+    filter:FilterValuesType
 }
 const TestItem = (props:PropsType) => {
     let [error, setError]=React.useState<string | null>(null)
@@ -52,7 +54,7 @@ const TestItem = (props:PropsType) => {
     
   return (
     <div className={s.items_box}>
-        <h2>{props.name}</h2>
+        <h2>{props.title}</h2>
         <div>
             <input 
                 type="text"
@@ -66,7 +68,7 @@ const TestItem = (props:PropsType) => {
         </div>
         <ul className={s.ul}>
             {props.tasks.map((task)=>{
-                const onClickHandler=()=> props.remove(task.taskId)
+                const onClickHandler=()=> props.removeTodolist(task.taskId)
                 const onChangeHandler=(e:ChangeEvent<HTMLInputElement>)=>{
                     let newIsDoneValue = e.currentTarget.checked
                     props.changeTaskStatus(task.taskId, newIsDoneValue)
