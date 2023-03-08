@@ -12,14 +12,17 @@ export type  TaskType={
   isDone: boolean
 }
 type PropsType ={  
-  id: number   
+  id: string
   title: string
-  tasks:Array<TaskType>  
-  removeTask:(taskId:number, todolistId: number)=>void
-  changeFilter:(value:FilterValuesType, todolistId: number)=>void
-  addTask:(text:string)=>void
-  changeTaskStatus:(id:number, isDone:boolean)=>void
-  filter:FilterValue
+  tasks: Array<TaskType>
+  removeTask: (taskId: string, todolistId: string) => void
+  changeFilter: (value: FilterValuesType, todolistId: string) => void
+  addTask: (title: string, todolistId: string) => void
+  changeTaskStatus: (id: string, isDone: boolean, todolistId: string) => void
+  removeTodolist: (id: string) => void
+  changeTodolistTitle: (id: string, newTitle: string) => void
+  filter: FilterValuesType
+  changeTaskTitle: (taskId: string, newTitle: string, todolistId: string) => void
 }
 
 const TypeScrTestsList = (props:PropsType) => {
