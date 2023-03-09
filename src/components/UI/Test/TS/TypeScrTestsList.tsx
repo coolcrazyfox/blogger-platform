@@ -4,6 +4,7 @@ import TestItem from './TestItem'
 import s from '../../../../styles/TestList.module.css'
 import { FilterValuesType } from '../../../../pages/RegistrationPage'
 import EditableSpan from './EditableSpan';
+import AddItemForm from './AddItemForm';
 
 
 
