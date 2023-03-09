@@ -23,7 +23,12 @@ const EditableSpan =React.memo( (props:EditableSpanType) => {
         <>
         {
             editMode ?
-            <input value={title} onChange={changeTitle} />
+            <input 
+                value={title}
+                onChange={changeTitle}
+                autoFocus
+                onBlur={activateViewMode}
+              />
             :
             <span onDoubleClick={activateEditMode}>{props.value}</span>
         }
