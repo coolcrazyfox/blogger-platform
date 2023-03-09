@@ -58,6 +58,7 @@ const TypeScrTestsList = React.memo((props: PropsType) => {
         <EditableSpan value={props.title} onChange={changeTodolistTitle}/>
         <button onClick={removeTodolist}>delete</button>
       </h2>
+      <AddItemForm addItem={addTask}/>
 
       
         <TestItem           
