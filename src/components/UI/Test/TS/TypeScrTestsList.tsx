@@ -5,6 +5,7 @@ import s from '../../../../styles/TestList.module.css'
 import { FilterValuesType } from '../../../../pages/RegistrationPage'
 import EditableSpan from './EditableSpan';
 import AddItemForm from './AddItemForm';
+import TaskRedux from './TaskRedux';
 
 
 
@@ -60,15 +61,23 @@ const TypeScrTestsList = React.memo((props: PropsType) => {
         <button onClick={removeTodolist}>delete</button>
       </h2>
       <AddItemForm addItem={addTask}/>
-      {
-        tasksForTodolist.map((t)=>{
-          return <TaskRedux
-                            key={t.id}
-                            todolistId={props.id}
-                            taskId={t.id}
-                            />
-        })
-      }
+      <div>
+        {
+          tasksForTodolist.map((t)=>{
+            return <TaskRedux
+                              key={t.id}
+                              todolistId={props.id}
+                              taskId={t.id}
+                              />
+          })
+        }
+      </div>
+      <div>
+        <button onClick={onAllClickHandler}>All</button>
+        <button onClick={onActiveClickHandler}>Active</button>
+        <button onClick={onCompletedClickHandler}>Completed</button>
+      </div>
+      
 
       
         <TestItem           
