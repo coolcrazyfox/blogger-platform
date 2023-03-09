@@ -6,6 +6,7 @@ import { FilterValuesType } from '../../../../pages/RegistrationPage'
 import EditableSpan from './EditableSpan';
 import AddItemForm from './AddItemForm';
 import TaskRedux from './TaskRedux';
+import FormButtons from './FormButtons';
 
 
 
@@ -72,15 +73,17 @@ const TypeScrTestsList = React.memo((props: PropsType) => {
           })
         }
       </div>
-      <div>
-        <button onClick={onAllClickHandler}>All</button>
-        <button onClick={onActiveClickHandler}>Active</button>
-        <button onClick={onCompletedClickHandler}>Completed</button>
-      </div>
+      <FormButtons 
+        onAllClickHandler={onAllClickHandler}
+        onActiveClickHandler={onActiveClickHandler}
+        onCompletedClickHandler={onCompletedClickHandler}
+      />
+        
+      
       
 
       
-        <TestItem           
+        {/* <TestItem           
           addTask={addTask}          
           removeTodolist={removeTodolist}
           title={props.title}
@@ -89,7 +92,7 @@ const TypeScrTestsList = React.memo((props: PropsType) => {
           onActiveClickHandler={onActiveClickHandler}
           onCompletedClickHandler={onCompletedClickHandler}
           filter={props.filter}
-          />
+          /> */}
           
 
       
