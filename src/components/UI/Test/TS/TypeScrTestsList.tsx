@@ -5,8 +5,8 @@ import s from '../../../../styles/TestList.module.css'
 import { FilterValuesType } from '../../../../pages/RegistrationPage'
 import EditableSpan from './EditableSpan';
 import AddItemForm from './AddItemForm';
-import TaskRedux from './TaskRedux';
 import FormButtons from './FormButtons';
+import TaskRedux from './TaskRedux';
 
 
 

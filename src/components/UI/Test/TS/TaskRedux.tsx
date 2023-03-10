@@ -1,6 +1,10 @@
 import React from 'react'
-
-const TaskRedux = () => {
+type TaskReduxType={
+  key:number
+  taskId:number
+  todolistId: number
+}
+const TaskRedux = (props:TaskReduxType) => {
   return (
     <div>
       
