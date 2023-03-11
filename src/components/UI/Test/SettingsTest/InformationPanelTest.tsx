@@ -1,9 +1,15 @@
 import React from 'react'
+import SuperButton from '../../SuperButton/SuperButton'
 
-const InformationPanelTest = () => {
+type InfoType={
+    label: string
+    onClicked:()=>void
+}
+const InformationPanelTest = ({...props}:InfoType) => {
   return (
-    <div>
-      InformationPanelTest
+    <div >
+        <button onClick={props.onClicked} >{props.label} </button>
+      
     </div>
   )
 }
