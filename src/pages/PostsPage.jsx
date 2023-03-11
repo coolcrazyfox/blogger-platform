@@ -267,7 +267,7 @@ const PostsPage = () => {
 
 
     return (
-        <div className={theme==='light'? s.main_container : s.main_container_dark}>
+        <div className={theme ==='light'? s.main_container : s.main_container_dark}>
             <ThemeProvider theme={themesP[theme]}>
                 <Header theme={theme} setTheme={setTheme}/>
                 <PostsPanel
