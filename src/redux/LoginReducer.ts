@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import { authApi, LoginisationType } from "../api/bloggerPlatformAPI"
+import { authApi, LoginisationType } from "../API/BloggerPlatformService"
 
 
 

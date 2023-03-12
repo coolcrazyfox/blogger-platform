@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { addUserType, usersAPI } from "../api/bloggerPlatformAPI"
+import { addUserType, usersAPI } from "../API/BloggerPlatformService"
 import { RootState } from "../store/store"
 
 export type UsersType = {
