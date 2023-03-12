@@ -1,0 +1,31 @@
+.paginatorUsers {
+    display: flex;
+    justify-content: center;
+    margin-right: 500px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    border: none;
+    background-color: white;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.selectedPage {
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 0 10px;
+    background-color: rgb(61, 63, 61);
+    color: white;
+}
+
+.select {
+    cursor: pointer;
+    padding: 0 10px;
+}
