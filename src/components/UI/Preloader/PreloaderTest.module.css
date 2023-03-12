@@ -1,0 +1,22 @@
+.loader{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+     width: 200px;
+     height: 200px;
+     border-radius: 50%;
+     border-bottom: 5px solid rgb(8, 48, 61);
+     animation: 1s animate infinite linear;
+     position: fixed;
+     display: block;
+     z-index:99999999;   
+ }
+ 
+ @keyframes animate {
+     from {
+         transform: translate(-50%, -50%) rotate(0deg);
+     }
+     to {
+         transform: translate(-50%, -50%) rotate(360deg);
+     }
+ }
