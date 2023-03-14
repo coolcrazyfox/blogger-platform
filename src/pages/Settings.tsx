@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
+import { useSelector } from 'react-redux';
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 import InformationPanelTest from '../components/UI/Test/SettingsTest/InformationPanelTest';
+import { selectStatus } from '../redux/selectors/app-selectors';
 
 export enum pathSiteBarEnum {
     main = '/',
@@ -16,6 +18,8 @@ export enum pathSiteBarEnum {
 
 
 const Settings = React.memo(() => {
+    const appStatus = useSelector(selectStatus)
+
     let[isActive, setIsActive] = useState<boolean>(false)
     let [theme, setTheme]=useState<string>('light'||'')
     let title='name platform'
