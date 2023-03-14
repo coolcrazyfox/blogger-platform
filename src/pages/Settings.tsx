@@ -2,8 +2,10 @@ import React, {useEffect, useState} from 'react';
 import { useSelector } from 'react-redux';
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
+import PreloaderTest from '../components/UI/Preloader/PreloaderTest';
 import InformationPanelTest from '../components/UI/Test/SettingsTest/InformationPanelTest';
 import { selectStatus } from '../redux/selectors/app-selectors';
+
 
 export enum pathSiteBarEnum {
     main = '/',
@@ -29,6 +31,9 @@ const Settings = React.memo(() => {
     return (
         <div style={theme==='light'?{background:'black', display:'flex', height:'100vh', color:'white'}:{background:'blue'}}> 
            <Header title={title} theme={theme} setTheme={setTheme}/>
+           <div>
+                {appStatus === 'loading' && <PreloaderTest/>}
+           </div>
            <NavBar 
            theme={theme}
            isActive={isActive}
