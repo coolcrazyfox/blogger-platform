@@ -3,7 +3,16 @@ import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 import InformationPanelTest from '../components/UI/Test/SettingsTest/InformationPanelTest';
 
-
+export enum pathSiteBarEnum {
+    main = '/',
+    blogs = '/',
+    posts = '/posts',
+    users = '/users',
+    postsOfBlog = '/postsOfBlog/:blogId',
+    postPage = '/postPage/:id',
+    oneBlogPage = '/oneBlogPage/:id',
+    login = '/login'
+}
 
 
 const Settings = React.memo(() => {
