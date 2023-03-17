@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import useDebounce from '../../../../hooks/useDebounce';
 import { pathSiteBarEnum } from '../../../../pages/Settings';
 import { addBlogTC, getBlogsTC } from '../../../../redux/BlogsReducer';
 import { checkAuthTC } from '../../../../redux/LoginReducer';
@@ -66,7 +67,7 @@ const Blogs = () => {
 
     const setActiveForModal = () => {
         setModalActive(false)
-        reset()  
+        // reset()  
     }
 
    
