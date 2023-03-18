@@ -5,6 +5,8 @@ import Button from '../Button/Button'
 //@ts-ignore
 import st from './Comments.module.css'
 import CommentItem from './CommentItem';
+import { selectComments } from '../../../../../redux/selectors/comments-selectors'
+import { addCommentTC } from '../../../../../redux/CommentsReducer'
 
 type CommentsType = {
   postId: string
