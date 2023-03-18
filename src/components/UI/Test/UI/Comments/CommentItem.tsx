@@ -12,7 +12,7 @@ type CommentItemType = {
 }
 const CommentItem = ({comment, ...props}: CommentItemType) => {
   return (
-    <div>
+    <div className={st.commentBlock}>
         <img className={st.avatar} src="https://w7.pngwing.com/pngs/862/646/png-transparent-beard-hipster-male-man-avatars-xmas-giveaway-icon-thumbnail.png" alt="avatar" />
             <span className={st.name}>{comment.commentatorInfo.userLogin}</span>
             <span className={st.date}>{comment.createdAt}</span>

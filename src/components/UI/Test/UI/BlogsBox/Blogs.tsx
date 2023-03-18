@@ -8,6 +8,7 @@ import { checkAuthTC } from '../../../../../redux/LoginReducer';
 import { selectBlogs, selectBlogsQuery } from '../../../../../redux/selectors/blogs-selectors';
 import { selectLogin } from '../../../../../redux/selectors/logib-seletors';
 import { useAppDispatch } from '../../../../../store/store';
+import Button from '../Button/Button';
 
 enum SelectEnum{
     o = '0',
@@ -76,7 +77,7 @@ const Blogs = () => {
         setDisable(false) 
     }
 
-    const seletHandler = (e: ChangeEvent<HTMLSelectElement>) => {
+    const selectHandler = (e: ChangeEvent<HTMLSelectElement>) => {
        const selectValue = e.currentTarget.value       
        if(selectValue === SelectEnum.createdAt || selectValue === SelectEnum.o){
         setSelectDate(selectValue)
@@ -89,9 +90,76 @@ const Blogs = () => {
 
     if (isLogin === false ) return <Link to={pathSiteBarEnum.login}/>
   return (
-    <div>
-      
-    </div>
+    <div className={st.blogColor}>
+            <h3 className={st.title}>Blogs</h3>
+            <div className={st.buttonAdd}>
+                <Button  onClick={() => { setModalActive(true); } } disabled={false} >Add new Blog</Button>
+            </div>
+            <hr />
+            <Modal active={modalActive} setActive={setActiveForModal} >
+                <div className={st.modalBlock}>
+                    <button onClick={setActiveForModal} className={st.closeButton}>X</button>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className={st.titleInput}>Name
+                            <input placeholder='name' className={st.inputForm} {...register('name', {
+                                required: 'field is required',
+                                maxLength: { value: 15, message: 'Max Length 15' },
+                            })} />
+                        </div>
+                        <div>{errors?.name && <p>{errors.name.message || 'Error'}</p>}</div>
+                        <div className={st.titleInput}>about
+                            <input placeholder='discription' className={st.inputForm} {...register('description', {
+                                required: 'field is required',
+                                maxLength: { value: 500, message: 'Max Length 500' },
+                            })} />
+                        </div>
+                        <div>{errors.description && <p>{errors.description.message || 'Error'}</p>}</div>
+                        <div className={st.titleInput}>website
+                            <input placeholder='www.xxx.com' className={st.inputForm} {...register('websiteUrl', { 
+                                required: 'field is required' })} />
+                        </div>
+                        <div>{errors.websiteUrl && <p>{errors.websiteUrl.message || 'Error'}</p>}</div>
+                        <input  className={st.createBlogButton}  type="submit" value='Create blog' />
+                    </form>
+                    <div>
+
+                    </div>
+                </div>
+            </Modal>
+
+            <div className={st.inputBlock}>
+                <div className={st.child1}>
+                    
+                    <input value={search} onChange={searchHandler} className={st.search} placeholder='search' type="text" />
+                </div>
+                <div className={st.child2}>
+                    <select onChange={selectHandler} className={st.select} name="blabla" id="1">
+                        <option  value={SelectEnum.createdAt} >New blogs first</option>
+                        <option  value={SelectEnum.o}>Old blogs first</option>
+                        <option  value={SelectEnum.asc}>From A to Z</option>
+                        <option  value={SelectEnum.desc}>From Z to A</option>
+                    </select>
+                </div>
+                <div className={st.child3}>
+                    <div className={st.blogs}>
+                        {
+                            blog.map(b => {
+                                return (
+                                    <div key={b.id}>
+                                        <Blog blog={b} />
+                                        <hr />
+                                    </div>
+                                )
+                            })
+                        }
+
+                    </div>
+                    <div className={st.buttonShowMore}>
+                        <Button onClick={showMoreHandler} disabled={disabled}>Show more ↓</Button>
+                    </div>
+                </div>
+            </div>
+        </div>
   )
 }
 
