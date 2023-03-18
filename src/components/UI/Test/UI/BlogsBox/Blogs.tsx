@@ -149,7 +149,7 @@ const Blogs = () => {
                     <input value={search} onChange={searchHandler} className={st.search} placeholder='search' type="text" />
                 </div>
                 <div className={st.child2}>
-                    <select onChange={selectHandler} className={st.select} name="blabla" id="1">
+                    <select onChange={selectHandler} className={st.select} name="text or title" id="1">
                         <option  value={SelectEnum.createdAt} >New blogs first</option>
                         <option  value={SelectEnum.o}>Old blogs first</option>
                         <option  value={SelectEnum.asc}>From A to Z</option>
