@@ -1,10 +1,11 @@
 import React from 'react'
 
-const Button = () => {
+const Button = ({...props}, children: string) => {
   return (
-    <div>
+    <>
+      <button {...props}>{children}</button>
       
-    </div>
+    </>
   )
 }
 
