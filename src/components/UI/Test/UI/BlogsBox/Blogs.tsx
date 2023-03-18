@@ -1,13 +1,13 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import useDebounce from '../../../../hooks/useDebounce';
-import { pathSiteBarEnum } from '../../../../pages/Settings';
-import { addBlogTC, getBlogsTC } from '../../../../redux/BlogsReducer';
-import { checkAuthTC } from '../../../../redux/LoginReducer';
-import { selectBlogs, selectBlogsQuery } from '../../../../redux/selectors/blogs-selectors';
-import { selectLogin } from '../../../../redux/selectors/logib-seletors';
-import { useAppDispatch } from '../../../../store/store';
+import useDebounce from '../../../../../hooks/useDebounce';
+import { pathSiteBarEnum } from '../../../../../pages/Settings';
+import { addBlogTC, getBlogsTC } from '../../../../../redux/BlogsReducer';
+import { checkAuthTC } from '../../../../../redux/LoginReducer';
+import { selectBlogs, selectBlogsQuery } from '../../../../../redux/selectors/blogs-selectors';
+import { selectLogin } from '../../../../../redux/selectors/logib-seletors';
+import { useAppDispatch } from '../../../../../store/store';
 
 enum SelectEnum{
     o = '0',

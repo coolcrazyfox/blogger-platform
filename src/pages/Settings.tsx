@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 import PreloaderTest from '../components/UI/Preloader/PreloaderTest';
-import InformationPanelTest from '../components/UI/Test/SettingsTest/InformationPanelTest';
+import InformationPanelTest from '../components/UI/Test/UI/SettingsTest/InformationPanelTest';
 import { selectStatus } from '../redux/selectors/app-selectors';
 
 
