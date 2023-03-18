@@ -41,7 +41,7 @@ const Comments = ({postId, ...props}:CommentsType) => {
   return (
     <div className={st.commentsBlock}>
             <h3 className={st.title}>{`Comments(${totalCount})`}</h3>
-            <input value={content} className={st.comment} onChange={onChangeHandler} type="text" placeholder='Provide your coment...' />
+            <input value={content} className={st.comment} onChange={onChangeHandler} type="text" placeholder='Provide your comment...' />
             {error && <div className={st.error}>{error}</div>}
             <div>
                 <Button disabled={false} title={'Cancel'} onClick={cancelBtnHandler} />
