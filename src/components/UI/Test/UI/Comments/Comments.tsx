@@ -1,6 +1,10 @@
 import React, { ChangeEvent, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from '../../../../../store/store'
+import Button from '../Button/Button'
+//@ts-ignore
+import st from './Comments.module.css'
+import CommentItem from './CommentItem';
 
 type CommentsType = {
   postId: string
@@ -14,7 +18,7 @@ const Comments = ({postId, ...props}:CommentsType) => {
     const dispatch = useAppDispatch()
 
    
-    const canclelButtonHandler = () => {
+    const cancelBtnHandler = () => {
         setContent('')
     }
 
@@ -33,9 +37,27 @@ const Comments = ({postId, ...props}:CommentsType) => {
         setError(null)
     }
   return (
-    <div>
-      
-    </div>
+    <div className={st.commentsBlock}>
+            <h3 className={st.title}>{`Comments(${totalCount})`}</h3>
+            <input value={content} className={st.comment} onChange={onChangeHandler} type="text" placeholder='Provide your coment...' />
+            {error && <div className={st.error}>{error}</div>}
+            <div>
+                <Button disabled={false} title={'Cancel'} onClick={cancelBtnHandler} />
+                <Button disabled={false} title={'Send your comment'} onClick={sendCommentHandler} />
+            </div>
+            {
+              items.map(c => {
+                return (
+                    <div key={c.id}>
+                        <CommentItem comment={c} />
+                    </div>
+                )
+              }) 
+            }
+            <div className={st.showMore}>
+            <Button disabled={false}  onClick={cancelBtnHandler} >Show more</Button>
+            </div>
+        </div>
   )
 }
 

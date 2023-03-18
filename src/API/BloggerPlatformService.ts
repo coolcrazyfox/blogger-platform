@@ -1,5 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { BlogsType, BlogType } from "../redux/BlogsReducer";
+import { CommentsType, CommentType } from "../redux/CommentsReducer";
 import { getPostsTC, PostsType, PostType } from "../redux/PostsReducer";
 import { UsersType, UserType } from "../redux/UserReducer";
 
@@ -125,15 +126,26 @@ export const usersAPI = {
     }
 }
 
-export type LoginisationType = {
+//authorizationAPI
+export type AuthorizationType = {
     loginOrEmail: string
     password: string
 }
 export const authApi = {
-    logIn(param: LoginisationType) {
+    logIn(param: AuthorizationType) {
         return AdminInstance.post(`auth/login`, param)
     },
     authMe(accessToken: string | null) {
         return AdminInstance.get(`auth/me`, {headers: { Authorization: "Bearer " + accessToken,} } )
+    },
+}
+//commentsAPI
+export const commentsAPI = {
+    addComment(postId: string, content: string, accessToken: string | null) {
+        return AdminInstance.post<CommentType>(`posts/${postId}/comments`,  {content: content}, 
+        {headers: { Authorization: "Bearer " + accessToken}}, )
+    },
+    getComments(postId?: string){
+        return AdminInstance.get<CommentsType>(`posts/${postId}/comments`)
     }
 }
