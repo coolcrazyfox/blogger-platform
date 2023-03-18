@@ -1,4 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
+import { useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import useDebounce from '../../../../../hooks/useDebounce';
@@ -9,6 +10,9 @@ import { selectBlogs, selectBlogsQuery } from '../../../../../redux/selectors/bl
 import { selectLogin } from '../../../../../redux/selectors/logib-seletors';
 import { useAppDispatch } from '../../../../../store/store';
 import Button from '../Button/Button';
+import Modal from '../Modal/Modal';
+//@ts-ignore
+import st from './Blogs.module.css'
 
 enum SelectEnum{
     o = '0',
@@ -32,7 +36,7 @@ const Blogs = () => {
 
 
     
-    const debonsedSerchValue = useDebounce( search, 700)
+    const debouncedSearchValue = useDebounce( search, 700)
     const dispatch = useAppDispatch()
   
     useEffect(() => {
@@ -43,8 +47,8 @@ const Blogs = () => {
    
 
     useEffect(() => {
-        dispatch(getBlogsTC({searchNameTerm: debonsedSerchValue, sortBy: selectDate, sortDirection: selectName}))
-    }, [debonsedSerchValue, selectDate, selectName])
+        dispatch(getBlogsTC({searchNameTerm: debouncedSearchValue, sortBy: selectDate, sortDirection: selectName}))
+    }, [debouncedSearchValue, selectDate, selectName])
 
    
 
@@ -59,6 +63,17 @@ const Blogs = () => {
         }
         
     }
+
+    const {
+        register, handleSubmit, formState: { errors }, formState, reset } = useForm({
+            mode: 'onBlur',
+            defaultValues: {
+                name: '',
+                description: '',
+                websiteUrl: '',
+            }
+        });
+
 
     const onSubmit = (args: any) => {
         dispatch(addBlogTC({ args }))
@@ -108,7 +123,7 @@ const Blogs = () => {
                         </div>
                         <div>{errors?.name && <p>{errors.name.message || 'Error'}</p>}</div>
                         <div className={st.titleInput}>about
-                            <input placeholder='discription' className={st.inputForm} {...register('description', {
+                            <input placeholder='description' className={st.inputForm} {...register('description', {
                                 required: 'field is required',
                                 maxLength: { value: 500, message: 'Max Length 500' },
                             })} />
