@@ -11,6 +11,7 @@ import { selectLogin } from '../../../../../redux/selectors/logib-seletors';
 import { useAppDispatch } from '../../../../../store/store';
 import Button from '../Button/Button';
 import Modal from '../Modal/Modal';
+import Blog from './Blog';
 //@ts-ignore
 import st from './Blogs.module.css'
 
