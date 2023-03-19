@@ -147,7 +147,7 @@ const Blogs = () => {
             <div className={st.inputBlock}>
                 <div className={st.child1}>
                     
-                    <input value={search} onChange={searchHandler} className={st.search} placeholder='search' type="text" />
+                    <Input value={search} onChange={searchHandler} className={st.search} placeholder='search' type="text" />
                 </div>
                 <div className={st.child2}>
                     <select onChange={selectHandler} className={st.select} name="text or title" id="1">
