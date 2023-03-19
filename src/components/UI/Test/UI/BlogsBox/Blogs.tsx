@@ -10,6 +10,7 @@ import { selectBlogs, selectBlogsQuery } from '../../../../../redux/selectors/bl
 import { selectLogin } from '../../../../../redux/selectors/logib-seletors';
 import { useAppDispatch } from '../../../../../store/store';
 import Button from '../Button/Button';
+import { Input } from '../Input/Input';
 import Modal from '../Modal/Modal';
 import Blog from './Blog';
 //@ts-ignore
@@ -114,28 +115,28 @@ const Blogs = () => {
             <hr />
             <Modal active={modalActive} setActive={setActiveForModal} >
                 <div className={st.modalBlock}>
-                    <button onClick={setActiveForModal} className={st.closeButton}>X</button>
+                    <Button onClick={setActiveForModal} >X</Button>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className={st.titleInput}>Name
-                            <input placeholder='name' className={st.inputForm} {...register('name', {
+                            <Input placeholder='name' className={st.inputForm} {...register('name', {
                                 required: 'field is required',
                                 maxLength: { value: 15, message: 'Max Length 15' },
                             })} />
                         </div>
                         <div>{errors?.name && <p>{errors.name.message || 'Error'}</p>}</div>
                         <div className={st.titleInput}>about
-                            <input placeholder='description' className={st.inputForm} {...register('description', {
+                            <Input placeholder='description' className={st.inputForm} {...register('description', {
                                 required: 'field is required',
                                 maxLength: { value: 500, message: 'Max Length 500' },
                             })} />
                         </div>
                         <div>{errors.description && <p>{errors.description.message || 'Error'}</p>}</div>
                         <div className={st.titleInput}>website
-                            <input placeholder='www.xxx.com' className={st.inputForm} {...register('websiteUrl', { 
+                            <Input placeholder='www.xxx.com' className={st.inputForm} {...register('websiteUrl', { 
                                 required: 'field is required' })} />
                         </div>
                         <div>{errors.websiteUrl && <p>{errors.websiteUrl.message || 'Error'}</p>}</div>
-                        <input  className={st.createBlogButton}  type="submit" value='Create blog' />
+                            <Input  className={st.createBlogButton}  type="submit" value='Create blog' />
                     </form>
                     <div>
 
