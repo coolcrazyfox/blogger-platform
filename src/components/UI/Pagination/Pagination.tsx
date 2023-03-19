@@ -25,8 +25,8 @@ const Pagination = ({totalCount=0, pagesCount, page, portionSize=10, ...props} :
     const leftPortionPageNumber = (portionNumber - 1) * portionSize + 1
     const rightPortionPageNumber = portionNumber * portionSize
 
-    const onPageChanged = (curentPage: number) => {
-            dispatch(getUsersTC({pageNumber: curentPage}))
+    const onPageChanged = (currentPage: number) => {
+            dispatch(getUsersTC({pageNumber: currentPage}))
     }  
 
   return (
