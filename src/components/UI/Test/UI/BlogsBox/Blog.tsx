@@ -67,13 +67,13 @@ const Blog = ({blog, ...props}: BlogPropsType) => {
             <div className={st.modalBlock}>
                 <div className={st.modalTitle}>Are you really wants to delete Blog?</div>
                 <div className={st.buttonBlock}>
-                    <Button className={st.yesButton} onClick={()=> {buttonYesHandler(blog.id)}}>Yes</Button>
-                    <Button className={st.noButton} onClick={buttonNoHandler}>No</Button>
+                    <Button  onClick={()=> {buttonYesHandler(blog.id)}}>Yes</Button>
+                    <Button  onClick={buttonNoHandler}>No</Button>
                 </div>
             </div>
         </Modal>
-        <Button className={st.buttonRemove} onClick={removeBlogHandler}>Remove blog</Button>
-        <Button className={st.buttonRemove} onClick={()=> {updateBlogHandler(blog.id)}}>Update blog</Button>
+        <Button  onClick={removeBlogHandler}>Remove blog</Button>
+        <Button  onClick={()=> {updateBlogHandler(blog.id)}}>Update blog</Button>
 
         <div className={st.blogBlock}>
                 <Modal active={updateModalActive} setActive={undefined} >
