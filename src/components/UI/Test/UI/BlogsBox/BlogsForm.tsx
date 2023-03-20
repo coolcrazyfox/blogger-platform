@@ -1,5 +1,7 @@
 import React from 'react'
 import { Input } from '../Input/Input'
+//@ts-ignore
+import st from './Blogs.module.css'
 
 const BlogsForm = () => {
 
