@@ -150,8 +150,7 @@ const Blogs = () => {
             </Modal>
 
             <div className={st.inputBlock}>
-                <div className={st.child1}>
-                    
+                <div className={st.child1}>                    
                     <Input value={search} onChange={searchHandler} className={st.search} placeholder='search' type="text" />
                 </div>
                 <div className={st.child2}>
