@@ -118,7 +118,7 @@ const Blogs = () => {
                 <div className={st.modalBlock}>
                     <Button onClick={setActiveForModal} >X</Button>
                     <BlogsForm onSubmit={handleSubmit(onSubmit)} dispatch={dispatch}/>
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    {/* <form onSubmit={handleSubmit(onSubmit)}>
                         <div className={st.titleInput}>Name
                             <Input placeholder='name' className={st.inputForm} {...register('name', {
                                 required: 'field is required',
@@ -145,7 +145,7 @@ const Blogs = () => {
                             {errors.websiteUrl && <p>{errors.websiteUrl.message || 'Error'}</p>}
                         </div>
                             <Input  className={st.createBlogButton}  type="submit" value='Create blog' />
-                    </form> 
+                    </form>  */}
                 </div>                   
             </Modal>
 
