@@ -117,7 +117,7 @@ const Blogs = () => {
             <Modal active={modalActive} setActive={setActiveForModal} >
                 <div className={st.modalBlock}>
                     <Button onClick={setActiveForModal} >X</Button>
-                    <BlogsForm onSubmit={handleSubmit(onSubmit)} dispatch={dispatch}/>
+                    <BlogsForm onSubmit={onSubmit} dispatch={dispatch}/>
                     {/* <form onSubmit={handleSubmit(onSubmit)}>
                         <div className={st.titleInput}>Name
                             <Input placeholder='name' className={st.inputForm} {...register('name', {

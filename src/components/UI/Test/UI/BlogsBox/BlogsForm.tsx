@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useForm } from 'react-hook-form';
+import { addBlogTC } from '../../../../../redux/BlogsReducer';
 import { Input } from '../Input/Input'
 //@ts-ignore
 import st from './Blogs.module.css'
 
-const BlogsForm = () => {
+type BlogsFormPropsType ={
+    dispatch: any
+    onSubmit: any
+}
+
+const BlogsForm = ({...props}:BlogsFormPropsType) => {
+    const [modalActive, setModalActive] = useState<boolean>(false);
+    const [disabled, setDisable] = useState<boolean>(false)
+
 
     const {
         register, handleSubmit, formState: { errors }, formState, reset } = useForm({
@@ -14,10 +24,13 @@ const BlogsForm = () => {
                 websiteUrl: '',
             }
         });
-
+    const setActiveForModal = () => {
+        setModalActive(false)
+            // reset()  
+    }
 
     const onSubmit = (args: any) => {
-        dispatch(addBlogTC({ args }))
+        props.dispatch(addBlogTC({ args }))
         setDisable(true) 
         setActiveForModal()
     }
