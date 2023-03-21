@@ -5,6 +5,8 @@ import NavBar from '../components/NavBar';
 import PreloaderTest from '../components/UI/Preloader/PreloaderTest';
 import InformationPanelTest from '../components/UI/Test/UI/SettingsTest/InformationPanelTest';
 import { selectStatus } from '../redux/selectors/app-selectors';
+//@ts-ignore
+import { ThemeProvider } from 'styled-components';
 
 
 export enum pathSiteBarEnum {
