@@ -19,7 +19,7 @@ export enum pathSiteBarEnum {
 }
 
 
-const Settings = React.memo(() => {
+const Settings = () => {
     const appStatus = useSelector(selectStatus)
 
     let[isActive, setIsActive] = useState<boolean>(false)
@@ -46,6 +46,6 @@ const Settings = React.memo(() => {
 
         </div>
     );
-});
+};
 
 export default Settings;
