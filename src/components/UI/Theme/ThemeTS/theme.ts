@@ -2,11 +2,11 @@
 import {createGlobalStyle} from 'styled-components'
 
 type CssProps = {
-    background:string
+    background:string,
     text:string
 }
 
-export const theme = {
+export const themE = {
     day:{
         background:'#fffff',
         text:'white',
@@ -18,8 +18,8 @@ export const theme = {
 }
 export const GlobalStyle = createGlobalStyle`
     body{
-        background:${({theme}:{theme:CssProps}) => theme.background};
-        color: ${({theme}:{theme:CssProps}) => theme.text};
+        background:${({themE}:{themE:CssProps}) => themE.background};
+        color: ${({themE}:{themE:CssProps}) => themE.text};
         transition: all .5s linear;
     }
 `

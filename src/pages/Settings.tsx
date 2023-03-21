@@ -7,6 +7,7 @@ import InformationPanelTest from '../components/UI/Test/UI/SettingsTest/Informat
 import { selectStatus } from '../redux/selectors/app-selectors';
 //@ts-ignore
 import { ThemeProvider } from 'styled-components';
+import { GlobalStyle, themE } from './../components/UI/Theme/ThemeTS/theme';
 
 
 export enum pathSiteBarEnum {
@@ -20,18 +21,33 @@ export enum pathSiteBarEnum {
     login = '/login'
 }
 
-
+type themeMode = 'day'|'night'
 const Settings = () => {
     const appStatus = useSelector(selectStatus)
 
     let[isActive, setIsActive] = useState<boolean>(false)
     let [theme, setTheme]=useState<string>('light'||'')
+    const[modeState, setModeState]=useState<themeMode>('day')
+    useEffect(()=>{
+        const localTheme: string = localStorage.getItem('react-theme') || 'day'
+        setMode(localTheme as themeMode)
+
+    }, [])
+    const setMode = (mode: themeMode)=>{
+        setModeState(mode)
+    }
+
+
     let title='name platform'
    const onClickHandler=()=>{
     setTheme('')
    }
     return (
         <div style={theme==='light'?{background:'black', display:'flex', height:'100vh', color:'white'}:{background:'blue'}}> 
+            <ThemeProvider themE={themE[modeState]}>
+                <GlobalStyle/>
+                <h1>Hello</h1>
+            </ThemeProvider>
            <Header title={title} theme={theme} setTheme={setTheme}/>
            <div>
                 {appStatus === 'loading' && <PreloaderTest/>}
