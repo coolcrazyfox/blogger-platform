@@ -27,6 +27,7 @@ const Settings = () => {
 
     let[isActive, setIsActive] = useState<boolean>(false)
     let [theme, setTheme]=useState<string>('light'||'')
+    //ThemeTS
     const[modeState, setModeState]=useState<themeMode>('day')
     useEffect(()=>{
         const localTheme: string = localStorage.getItem('react-theme') || 'day'
@@ -34,7 +35,11 @@ const Settings = () => {
 
     }, [])
     const setMode = (mode: themeMode)=>{
+        localStorage.setItem('react-theme', mode)
         setModeState(mode)
+    }
+    const toggleTheme=()=>{
+        modeState === 'night' ? setMode('day') : setMode('night')
     }
 
 
@@ -47,6 +52,7 @@ const Settings = () => {
             <ThemeProvider themE={themE[modeState]}>
                 <GlobalStyle/>
                 <h1>Hello</h1>
+                <button onClick={toggleTheme}>Toggle Theme</button>
             </ThemeProvider>
            <Header title={title} theme={theme} setTheme={setTheme}/>
            <div>
