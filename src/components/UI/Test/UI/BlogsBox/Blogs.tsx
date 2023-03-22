@@ -169,8 +169,7 @@ const Blogs = () => {
                             blog.map(b => {
                                 return (
                                     <div key={b.id}>
-                                        <Blog blog={b} />
-                                        <hr />
+                                        <Blog blog={b} />                                        
                                     </div>
                                 )
                             })
