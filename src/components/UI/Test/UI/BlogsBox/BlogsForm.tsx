@@ -36,12 +36,18 @@ const BlogsForm = ({...props}:BlogsFormPropsType) => {
     }
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className={st.titleInput}>Name
-                            <Input placeholder='name' className={st.inputForm} {...register('name', {
+        <div className={st.titleInput}>
+            Name
+            <Input 
+                placeholder='name'
+                className={st.inputForm}
+                {...register('name', {
                                 required: 'field is required',
                                 maxLength: { value: 15, message: 'Max Length 15' },
-                            })} />
-                        </div>
+                            })
+                } 
+            />                            
+        </div>
                         <div>{errors?.name && <p>{errors.name.message || 'Error'}</p>}</div>
                         <div className={st.titleInput}>about
                             <Input placeholder='description' className={st.inputForm} {...register('description', {
@@ -56,6 +62,7 @@ const BlogsForm = ({...props}:BlogsFormPropsType) => {
                         </div>
                         <div>{errors.websiteUrl && <p>{errors.websiteUrl.message || 'Error'}</p>}</div>
                             <Input  className={st.createBlogButton}  type="submit" value='Create blog' />
+                        
     </form>
   )
 }
