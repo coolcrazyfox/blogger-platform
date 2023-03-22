@@ -15,6 +15,7 @@ import Modal from '../Modal/Modal';
 import Blog from './Blog';
 //@ts-ignore
 import st from './Blogs.module.css'
+import BlogSelectForm from './BlogSelectForm';
 import BlogsForm from './BlogsForm';
 
 enum SelectEnum{
@@ -154,6 +155,7 @@ const Blogs = () => {
                     <Input value={search} onChange={searchHandler} className={st.search} placeholder='search' type="text" />
                 </div>
                 <div className={st.child2}>
+                    <BlogSelectForm onChange={selectHandler} />
                     <select onChange={selectHandler} className={st.select} name="text or title" id="1">
                         <option  value={SelectEnum.createdAt} >New blogs first</option>
                         <option  value={SelectEnum.o}>Old blogs first</option>
