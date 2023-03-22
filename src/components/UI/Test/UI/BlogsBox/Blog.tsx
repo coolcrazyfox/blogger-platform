@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { BlogType, removeBlogTC, updateBlogTC } from '../../../../../redux/BlogsReducer'
 import { useAppDispatch } from '../../../../../store/store'
 import Button from '../Button/Button'
+import { Input } from '../Input/Input'
 import Modal from '../Modal/Modal'
 //@ts-ignores
 import st from './Blog.module.css'
@@ -78,30 +79,30 @@ const Blog = ({blog, ...props}: BlogPropsType) => {
         <div className={st.blogBlock}>
                 <Modal active={updateModalActive} setActive={undefined} >
                     <div className={st.modalBlockUpdate}>
-                        <div><button onClick={closeUpdateModalHandler} className={st.closeButton}>X</button></div>
+                        <div><Button onClick={closeUpdateModalHandler} >X</Button></div>
                             <h4 className={st.titleModal}>Update Blog</h4>
                             <div>
                             <form onSubmit={handleSubmit(onSubmit)}>
                             <div className={st.modalUpdateTitle}>Name
-                            <input  placeholder='Name' className={st.modalInputUpdate} {...register('name', {
+                            <Input  placeholder='Name' className={st.modalInputUpdate} {...register('name', {
                                 required: 'field is required',
                                 maxLength: { value: 15, message: 'Max Length 15' },
                             })} />
                         </div>
                         <div>{errors?.name && <p>{errors.name.message || 'Error'}</p>}</div>
                         <div className={st.modalUpdateTitle}>about
-                            <input  placeholder='description' className={st.modalInputUpdate} {...register('description', {
+                            <Input  placeholder='description' className={st.modalInputUpdate} {...register('description', {
                                 required: 'field is required',
                                 maxLength: { value: 500, message: 'Max Length 500' },
                             })} />
                         </div>
                         <div>{errors.description && <p>{errors.description.message || 'Error'}</p>}</div>
                         <div className={st.modalUpdateTitle}>website
-                            <input  placeholder='www.xxx.com' className={st.modalInputUpdate} {...register('websiteUrl', { 
+                            <Input  placeholder='www.xxx.com' className={st.modalInputUpdate} {...register('websiteUrl', { 
                                 required: 'field is required' })} />
                         </div>
                         <div>{errors.websiteUrl && <p>{errors.websiteUrl.message || 'Error'}</p>}</div>
-                        <input  className={st.updateButton}  type="submit" value='Update Blog' />
+                        <Input  className={st.updateButton}  type="submit" value='Update Blog' />
                             </form>
                             </div>
                     </div>
