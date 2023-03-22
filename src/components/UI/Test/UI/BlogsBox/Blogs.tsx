@@ -156,12 +156,12 @@ const Blogs = () => {
                 </div>
                 <div className={st.child2}>
                     <BlogSelectForm onChange={selectHandler} />
-                    <select onChange={selectHandler} className={st.select} name="text or title" id="1">
+                    {/* <select onChange={selectHandler} className={st.select} name="text or title" id="1">
                         <option  value={SelectEnum.createdAt} >New blogs first</option>
                         <option  value={SelectEnum.o}>Old blogs first</option>
                         <option  value={SelectEnum.asc}>From A to Z</option>
                         <option  value={SelectEnum.desc}>From Z to A</option>
-                    </select>
+                    </select> */}
                 </div>
                 <div className={st.child3}>
                     <div className={st.blogs}>
