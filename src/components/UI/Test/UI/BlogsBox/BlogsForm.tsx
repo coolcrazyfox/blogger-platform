@@ -56,7 +56,7 @@ const BlogsForm = ({...props}:BlogsFormPropsType) => {
                         </div>
                         <div>{errors.websiteUrl && <p>{errors.websiteUrl.message || 'Error'}</p>}</div>
                             <Input  className={st.createBlogButton}  type="submit" value='Create blog' />
-                    </form>
+    </form>
   )
 }
 
