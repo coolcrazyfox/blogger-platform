@@ -1,7 +1,26 @@
 import React from 'react'
+import { useForm } from 'react-hook-form'
 import { Input } from '../Input/Input'
+//@ts-ignores
+import st from './Blog.module.css'
 
-const BlogForm = ({handleSubmit,onSubmit, ...props}) => {
+type BlogFormPropsType = {
+    onSubmit: any
+    handleSubmit:any
+}
+
+
+
+const BlogForm = ({onSubmit, ...props}:BlogFormPropsType) => {
+    const {
+        register, handleSubmit, formState: { errors }, formState, reset } = useForm({
+            mode: 'onBlur',
+            defaultValues: {
+                name: '',
+                description: '',
+                websiteUrl: '',
+            }
+        });
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
         <div className={st.modalUpdateTitle}>Name
