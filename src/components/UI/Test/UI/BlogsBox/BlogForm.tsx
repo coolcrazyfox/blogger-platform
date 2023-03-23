@@ -6,7 +6,7 @@ import st from './Blog.module.css'
 
 type BlogFormPropsType = {
     onSubmit: any
-    handleSubmit:any
+    handleSubmit?:any
 }
 
 

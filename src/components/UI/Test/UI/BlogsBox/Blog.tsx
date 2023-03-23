@@ -8,6 +8,7 @@ import { Input } from '../Input/Input'
 import Modal from '../Modal/Modal'
 //@ts-ignores
 import st from './Blog.module.css'
+import BlogForm from './BlogForm'
 
 type BlogPropsType = {
     blog: BlogType
@@ -82,7 +83,8 @@ const Blog = ({blog, ...props}: BlogPropsType) => {
                         <div><Button onClick={closeUpdateModalHandler} >X</Button></div>
                             <h4 className={st.titleModal}>Update Blog</h4>
                             <div>
-                            <form onSubmit={handleSubmit(onSubmit)}>
+                                <BlogForm onSubmit={onSubmit}/>
+                            {/* <form onSubmit={handleSubmit(onSubmit)}>
                             <div className={st.modalUpdateTitle}>Name
                             <Input  placeholder='Name' className={st.modalInputUpdate} {...register('name', {
                                 required: 'field is required',
@@ -103,7 +105,7 @@ const Blog = ({blog, ...props}: BlogPropsType) => {
                         </div>
                         <div>{errors.websiteUrl && <p>{errors.websiteUrl.message || 'Error'}</p>}</div>
                         <Input  className={st.updateButton}  type="submit" value='Update Blog' />
-                            </form>
+                            </form> */}
                             </div>
                     </div>
                 </Modal>
