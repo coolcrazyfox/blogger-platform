@@ -1,6 +1,7 @@
 import React from 'react'
+import { Input } from '../Input/Input'
 
-const BlogForm = () => {
+const BlogForm = ({handleSubmit,onSubmit, ...props}) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
         <div className={st.modalUpdateTitle}>Name
