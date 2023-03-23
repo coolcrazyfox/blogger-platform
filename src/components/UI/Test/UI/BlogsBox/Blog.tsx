@@ -83,7 +83,7 @@ const Blog = ({blog, ...props}: BlogPropsType) => {
                         <div><Button onClick={closeUpdateModalHandler} >X</Button></div>
                             <h4 className={st.titleModal}>Update Blog</h4>
                             <div>
-                                <BlogForm onSubmit={onSubmit}/>
+                                <BlogForm onSubmit={handleSubmit(onSubmit)}/>
                             {/* <form onSubmit={handleSubmit(onSubmit)}>
                             <div className={st.modalUpdateTitle}>Name
                             <Input  placeholder='Name' className={st.modalInputUpdate} {...register('name', {
