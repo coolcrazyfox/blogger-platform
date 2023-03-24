@@ -7,7 +7,7 @@ import st from './Blogs.module.css'
 
 type BlogsFormPropsType ={
     dispatch: any
-    onSubmit: any
+    onSubmit: (args:any)=> void
 }
 
 const BlogsForm = ({...props}:BlogsFormPropsType) => {
