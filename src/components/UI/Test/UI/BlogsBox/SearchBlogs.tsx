@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 import { Input } from '../Input/Input'
 //@ts-ignores
 import st from './Blog.module.css'
 
 type SearchBlogsPropsType = {
-    searchHandler:()=>void
+    searchHandler:(e: ChangeEvent <HTMLInputElement>)=>void
     search: string
 }
 

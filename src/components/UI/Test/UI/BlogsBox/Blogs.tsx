@@ -17,6 +17,7 @@ import Blog from './Blog';
 import st from './Blogs.module.css'
 import BlogSelectForm from './BlogSelectForm';
 import BlogsForm from './BlogsForm';
+import SearchBlogs from './SearchBlogs';
 
 enum SelectEnum{
     o = '0',
@@ -151,8 +152,9 @@ const Blogs = () => {
             </Modal>
 
             <div className={st.inputBlock}>
-                <div className={st.child1}>                    
-                    <Input value={search} onChange={searchHandler} className={st.search} placeholder='search' type="text" />
+                <div className={st.child1}>  
+                     <SearchBlogs search={search} searchHandler={searchHandler}/>             
+                    {/* <Input value={search} onChange={searchHandler} className={st.search} placeholder='search' type="text" /> */}
                 </div>
                 <div className={st.child2}>
                     <BlogSelectForm onChange={selectHandler} />
