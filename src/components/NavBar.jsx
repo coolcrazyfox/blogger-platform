@@ -5,7 +5,7 @@ import { RiLoginCircleFill } from "react-icons/ri";
 // import {SlLogin} from "react-icons/sl";
 import { HiUserGroup } from "react-icons/hi";
 import { MdSettingsSuggest } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, isActive } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 
 export const initialState = [
@@ -53,7 +53,7 @@ export const initialState = [
   },
 ];
 
-const NavBar = ({ theme, isActive, setIsActive }) => {
+const NavBar = ({ theme, isActives, setIsActives }) => {
   // const [isActive, setIsActive] = useState(false)
   const [check, setCheck] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -68,8 +68,8 @@ const NavBar = ({ theme, isActive, setIsActive }) => {
   };
 
   const handleOnClick = () => {
-    setIsActive((current) => !current);
-    setIsActive(!isActive);
+    setIsActives((current) => !current);
+    setIsActives(!isActives);
   };
   const activeLink = s.navigation_active;
   const normalLink = s.navigation;
@@ -77,9 +77,11 @@ const NavBar = ({ theme, isActive, setIsActive }) => {
   return (
     <>
       <Fade left>
-        <div className={isActive ? s.main_active : s.main}>
+        <div className={isActives ? s.main_active : s.main}>
           {/* <div className={isActive ? s.navigation_active : s.navigation}> */}
-          <div className={(isActive) => (isActive ? activeLink : normalLink)}>
+          <div
+            className={({ isActive }) => (isActive ? activeLink : normalLink)}
+          >
             <div
               className={theme === "light" ? s.menuToggle : s.menuToggle_dark}
               onClick={handleOnClick}
