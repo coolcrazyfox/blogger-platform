@@ -71,14 +71,15 @@ const NavBar = ({ theme, isActive, setIsActive }) => {
     setIsActive((current) => !current);
     setIsActive(!isActive);
   };
-  const activeLink = "navigation_active";
-  const normalLink = "navigation";
+  const activeLink = s.navigation_active;
+  const normalLink = s.navigation;
 
   return (
     <>
       <Fade left>
         <div className={isActive ? s.main_active : s.main}>
-          <div className={isActive ? s.navigation_active : s.navigation}>
+          {/* <div className={isActive ? s.navigation_active : s.navigation}> */}
+          <div className={(isActive) => (isActive ? activeLink : normalLink)}>
             <div
               className={theme === "light" ? s.menuToggle : s.menuToggle_dark}
               onClick={handleOnClick}
