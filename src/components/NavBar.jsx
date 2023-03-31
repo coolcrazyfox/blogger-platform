@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import s from "../styles/NavBar.module.css";
+import { Link, isActive } from "react-router-dom";
+import Fade from "react-reveal/Fade";
 import { SiApostrophe, SiHomeassistant, SiMicrodotblog } from "react-icons/si";
 import { RiLoginCircleFill } from "react-icons/ri";
 // import {SlLogin} from "react-icons/sl";
 import { HiUserGroup } from "react-icons/hi";
 import { MdSettingsSuggest } from "react-icons/md";
-import { Link, isActive } from "react-router-dom";
-import Fade from "react-reveal/Fade";
+import s from "../styles/NavBar.module.css";
 
 export const initialState = [
   {
