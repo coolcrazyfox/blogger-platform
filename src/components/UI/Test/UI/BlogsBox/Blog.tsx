@@ -10,9 +10,9 @@ import { useAppDispatch } from "../../../../../store/store";
 import Button from "../Button/Button";
 import { Input } from "../Input/Input";
 import Modal from "../Modal/Modal";
+import BlogForm from "./BlogForm";
 //@ts-ignores
 import st from "./Blog.module.css";
-import BlogForm from "./BlogForm";
 
 type BlogPropsType = {
   blog: BlogType;
