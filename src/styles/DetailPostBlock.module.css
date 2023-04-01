@@ -67,14 +67,14 @@
   content: "";
   position: fixed;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   top: 29%;
-  left: 30%;
+  left: 29%;
   min-height: 9vh;
-  width: 7vw;
+  width: 8vw;
   margin: 2px;
-  padding-left: 10px;
-  padding-top: 5px;
+  padding: 2px;
   border-radius: 10px;
   border-left: 1px solid #ebedf1;
   background: rgba(12, 107, 107, 0.91);
@@ -94,6 +94,8 @@
   width: 95%;
 }
 .box .container .select_box ul .lis {
+  display: flex;
+  align-items: center;
   margin: 2px;
   height: 2rem;
   padding: 1px;
@@ -102,15 +104,22 @@
   cursor: pointer;
   margin-bottom: 2px;
 }
+.box .container .select_box ul .lis:hover {
+  color: rgb(232, 171, 215);
+}
 .box .container .select_box ul .lisActive {
   display: flex;
+  align-items: center;
   margin: 2px;
   height: 2rem;
   padding: 1px;
   width: 100%;
   color: #ff9900;
   cursor: pointer;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
+}
+.box .container .select_box ul .lisActive:hover {
+  color: rgb(118, 201, 79);
 }
 .box .container .title span {
   margin-left: 20px;
