@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import s from "../styles/DetailPostBlock.module.css";
 import Bounce from "react-reveal/Bounce";
 
-const DetailPostBlock = ({ onClickListItem, details, sortDetails }) => {
+const DetailPostBlock = ({ onClickListItems, details, sortDetails }) => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(0);
   const statePosts = ["for public posts", "for private posts"];

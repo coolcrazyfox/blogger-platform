@@ -20,7 +20,7 @@ const DetailsPost = () => {
       <NavBar />
       <InfoPostsPanel sortDetails={sortDetails} />
       <DetailPostBlock
-        onClickListItem={onClickListItem}
+        onClickListItems={onClickListItem}
         details={details}
         sortDetails={sortDetails}
       />
