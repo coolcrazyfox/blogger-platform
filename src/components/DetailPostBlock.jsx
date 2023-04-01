@@ -37,9 +37,9 @@ const DetailPostBlock = ({ onClickListItems, details, sortDetails }) => {
                     <li
                       key={i}
                       onClick={() => onClickListItem(i)}
-                      // onChange={(i)=>setSelected(i)}
+                      //   onChange={(i) => setSelected(i)}
                       className={!selected ? rootClasses.join(" ") : ""}
-                      // className={selected === i ? s.lisActive : s.lis}
+                      //   className={selected === i ? s.lisActive : s.lis}
                     >
                       {name}
                     </li>
