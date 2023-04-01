@@ -70,7 +70,7 @@
   align-items: center;
   justify-content: center;
   top: 29%;
-  left: 29%;
+  left: 30%;
   min-height: 9vh;
   width: 8vw;
   margin: 2px;
@@ -95,8 +95,9 @@
 }
 .box .container .select_box ul .lis {
   display: flex;
+  justify-content: center;
   align-items: center;
-  margin: 2px;
+  /* margin: 2px; */
   height: 2rem;
   padding: 1px;
   width: 100%;
@@ -106,11 +107,14 @@
 }
 .box .container .select_box ul .lis:hover {
   color: rgb(232, 171, 215);
+  border-radius: 5px;
+  background: #142f3b;
 }
 .box .container .select_box ul .lisActive {
   display: flex;
+  justify-content: center;
   align-items: center;
-  margin: 2px;
+  /* margin: 2px; */
   height: 2rem;
   padding: 1px;
   width: 100%;
@@ -120,6 +124,8 @@
 }
 .box .container .select_box ul .lisActive:hover {
   color: rgb(118, 201, 79);
+  border-radius: 5px;
+  background: #142f3b;
 }
 .box .container .title span {
   margin-left: 20px;
