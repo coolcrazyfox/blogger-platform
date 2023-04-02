@@ -71,8 +71,8 @@ const NavBar = ({ theme, isActives, setIsActives }) => {
     setIsActives((current) => !current);
     setIsActives(!isActives);
   };
-  const activeLink = s.navigation_active;
-  const normalLink = s.navigation;
+  // const activeLink = s.navigation_active;
+  // const normalLink = s.navigation;
 
   return (
     <>
