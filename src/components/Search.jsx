@@ -8,10 +8,9 @@ import { ImSearch } from "react-icons/im";
 import { AppContext } from "../App";
 
 const Search = ({ options, filter, setFilter }) => {
-  const [searchValue, setSearchValue] = React.useContext(AppContext);
+  const { searchValue, setSearchValue } = React.useContext(AppContext);
   const [inform, setInform] = useState(initialState);
   const info = inform[1];
-  const [carList, setCarList] = useState([]);
 
   // const handlerEnterSearch =(e)=>{
   //     setSearchTerm(e.target.value)
