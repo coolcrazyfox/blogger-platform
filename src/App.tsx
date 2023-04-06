@@ -6,9 +6,7 @@ export const AppContext = React.createContext<any>("");
 function App() {
   return (
     <div className={"App"}>
-      <AppContext.Provider value={{ searchValue, setSearchValue }}>
-        <RouterRoot />
-      </AppContext.Provider>
+      <RouterRoot />
     </div>
   );
 }
