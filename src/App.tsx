@@ -4,7 +4,6 @@ import "./App.css";
 
 export const AppContext = React.createContext<any>("");
 function App() {
-  const [searchValue, setSearchValue] = React.useState<string>("");
   return (
     <div className={"App"}>
       <AppContext.Provider value={{ searchValue, setSearchValue }}>
