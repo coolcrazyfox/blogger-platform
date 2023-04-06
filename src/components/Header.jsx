@@ -8,7 +8,7 @@ import Zoom from "react-reveal/Zoom";
 import Loader from "./Loader";
 import Splash from "./UI/Theme/Splash";
 
-const Header = ({ title, theme, setTheme }) => {
+const Header = ({ theme, setTheme }) => {
   const headerTitle = "Blogger Platform ";
   const [modalActive, setModalActive] = useState(true);
   const [isActive, setIsActive] = useState(false);
@@ -26,7 +26,7 @@ const Header = ({ title, theme, setTheme }) => {
   return (
     <div className={theme === "light" ? s.header : s.header_dark}>
       <div className={s.title}>
-        <Link to="/" onClick={() => {}}>
+        <Link to="/">
           <h4>{headerTitle}</h4>
         </Link>
 
