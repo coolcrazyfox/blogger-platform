@@ -13,6 +13,7 @@ const Search = ({ options, filter, setFilter }) => {
   const inputRef = React.useRef();
   const onClickClearHandler = (e) => {
     setFilter({ ...filter, query: "" });
+    inputRef.current.focus();
   };
 
   // const handlerEnterSearch =(e)=>{
