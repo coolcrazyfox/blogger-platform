@@ -24,6 +24,7 @@ const Search = ({ options, filter, setFilter }) => {
   );
   const onChangeInputFilterHandler = (e) => {
     setFilter({ ...filter, query: e.target.value });
+    updateSearchValue({ ...filter, query: e.target.value });
   };
 
   // const handlerEnterSearch =(e)=>{
