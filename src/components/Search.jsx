@@ -10,6 +10,7 @@ import { AppContext } from "../App";
 const Search = ({ options, filter, setFilter }) => {
   const [inform, setInform] = useState(initialState);
   const info = inform[1];
+  const inputRef = React.useRef();
 
   // const handlerEnterSearch =(e)=>{
   //     setSearchTerm(e.target.value)
@@ -31,6 +32,7 @@ const Search = ({ options, filter, setFilter }) => {
             <ImSearch />
           </span>
           <SuperInput
+            ref={inputRef}
             value={filter.query}
             onChange={(e) => setFilter({ ...filter, query: e.target.value })}
             type="text"
