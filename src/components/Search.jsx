@@ -9,17 +9,19 @@ import { AppContext } from "../App";
 import s from "../styles/Search.module.css";
 
 const Search = ({ options, filter, setFilter }) => {
+  const [value, setValue] = useState("");
   const [inform, setInform] = useState(initialState);
   const info = inform[1];
   const inputRef = React.useRef();
   const onClickClearHandler = () => {
+    setValue("");
     setFilter({ ...filter, query: "" });
     inputRef.current.focus();
   };
   const updateSearchValue = React.useCallback(
     debounce((string) => {
       setFilter({ ...filter, query: string });
-    }, 1000),
+    }, 500),
     []
   );
   const onChangeInputFilterHandler = (e) => {
