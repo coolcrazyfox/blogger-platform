@@ -19,7 +19,8 @@ const Search = ({ options, filter, setFilter }) => {
   const updateSearchValue = React.useCallback(
     debounce((string) => {
       setFilter({ ...filter, query: string });
-    })
+    }, 1000),
+    []
   );
   const onChangeInputFilterHandler = (e) => {
     setFilter({ ...filter, query: e.target.value });
