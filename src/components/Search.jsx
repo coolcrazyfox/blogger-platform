@@ -50,12 +50,14 @@ const Search = ({ options, filter, setFilter }) => {
           </span>
           <SuperInput
             ref={inputRef}
+            // value={value}
             value={filter.query}
             onChange={onChangeInputFilterHandler}
             type="text"
             placeholder={"Search"}
             // setSearchQuery={setSearchQuery}
           />
+          {/* value */}
           {filter.query && (
             <div className={s.clear}>
               <AiOutlineClear onClick={onClickClearHandler} />
