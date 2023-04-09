@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import s from "../styles/Search.module.css";
+import debounce from "lodash.debounce";
 import SuperSelect from "./UI/SuperSelect/SuperSelect";
 import { AiOutlineClear } from "react-icons/ai";
 import { initialState } from "./NavBar";
 import SuperInput from "./UI/SuperInput/SuperInput";
 import { ImSearch } from "react-icons/im";
 import { AppContext } from "../App";
+import s from "../styles/Search.module.css";
 
 const Search = ({ options, filter, setFilter }) => {
   const [inform, setInform] = useState(initialState);
@@ -15,7 +16,12 @@ const Search = ({ options, filter, setFilter }) => {
     setFilter({ ...filter, query: "" });
     inputRef.current.focus();
   };
-  const onChangeFilterHandler = (e) => {
+  const updateSearchValue = React.useCallback(
+    debounce((string) => {
+      setFilter({ ...filter, query: string });
+    })
+  );
+  const onChangeInputFilterHandler = (e) => {
     setFilter({ ...filter, query: e.target.value });
   };
 
@@ -41,7 +47,7 @@ const Search = ({ options, filter, setFilter }) => {
           <SuperInput
             ref={inputRef}
             value={filter.query}
-            onChange={onChangeFilterHandler}
+            onChange={onChangeInputFilterHandler}
             type="text"
             placeholder={"Search"}
             // setSearchQuery={setSearchQuery}
