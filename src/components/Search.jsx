@@ -11,6 +11,9 @@ const Search = ({ options, filter, setFilter }) => {
   const [inform, setInform] = useState(initialState);
   const info = inform[1];
   const inputRef = React.useRef();
+  const onClickClearHandler = (e) => {
+    setFilter({ ...filter, query: "" });
+  };
 
   // const handlerEnterSearch =(e)=>{
   //     setSearchTerm(e.target.value)
@@ -41,9 +44,7 @@ const Search = ({ options, filter, setFilter }) => {
           />
           {filter.query && (
             <div className={s.clear}>
-              <AiOutlineClear
-                onClick={(e) => setFilter({ ...filter, query: "" })}
-              />
+              <AiOutlineClear onClick={onClickClearHandler} />
             </div>
           )}
         </div>
