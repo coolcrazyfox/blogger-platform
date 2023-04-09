@@ -11,9 +11,12 @@ const Search = ({ options, filter, setFilter }) => {
   const [inform, setInform] = useState(initialState);
   const info = inform[1];
   const inputRef = React.useRef();
-  const onClickClearHandler = (e) => {
+  const onClickClearHandler = () => {
     setFilter({ ...filter, query: "" });
     inputRef.current.focus();
+  };
+  const onChangeFilterHandler = (e) => {
+    setFilter({ ...filter, query: e.target.value });
   };
 
   // const handlerEnterSearch =(e)=>{
@@ -38,7 +41,7 @@ const Search = ({ options, filter, setFilter }) => {
           <SuperInput
             ref={inputRef}
             value={filter.query}
-            onChange={(e) => setFilter({ ...filter, query: e.target.value })}
+            onChange={onChangeFilterHandler}
             type="text"
             placeholder={"Search"}
             // setSearchQuery={setSearchQuery}
